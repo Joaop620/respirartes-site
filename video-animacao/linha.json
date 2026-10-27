@@ -1,0 +1,4083 @@
+{
+ "duracao": 120.0,
+ "off": 1.8,
+ "cenas": [
+  {
+   "id": "abertura",
+   "ini": 0.0,
+   "fim": 10.62,
+   "trans": null
+  },
+  {
+   "id": "origem",
+   "ini": 10.62,
+   "fim": 19.44,
+   "trans": "iris"
+  },
+  {
+   "id": "2014",
+   "ini": 19.44,
+   "fim": 26.54,
+   "trans": "cortina"
+  },
+  {
+   "id": "2022",
+   "ini": 26.54,
+   "fim": 35.8,
+   "trans": "flash"
+  },
+  {
+   "id": "2025",
+   "ini": 35.8,
+   "fim": 43.26,
+   "trans": "wipe"
+  },
+  {
+   "id": "pessoas",
+   "ini": 43.26,
+   "fim": 49.44,
+   "trans": "zoom"
+  },
+  {
+   "id": "filmes",
+   "ini": 49.44,
+   "fim": 52.34,
+   "trans": "iris"
+  },
+  {
+   "id": "f-flores",
+   "ini": 52.34,
+   "fim": 53.1,
+   "trans": "flash"
+  },
+  {
+   "id": "f-lidia",
+   "ini": 53.1,
+   "fim": 54.02,
+   "trans": "whip"
+  },
+  {
+   "id": "f-fita",
+   "ini": 54.02,
+   "fim": 54.68,
+   "trans": "whip"
+  },
+  {
+   "id": "f-camadas",
+   "ini": 54.68,
+   "fim": 55.62,
+   "trans": "whip"
+  },
+  {
+   "id": "f-toto",
+   "ini": 55.62,
+   "fim": 57.46,
+   "trans": "whip"
+  },
+  {
+   "id": "f-olhares",
+   "ini": 57.46,
+   "fim": 58.88,
+   "trans": "whip"
+  },
+  {
+   "id": "f-folia",
+   "ini": 58.88,
+   "fim": 60.8,
+   "trans": "whip"
+  },
+  {
+   "id": "temas",
+   "ini": 60.8,
+   "fim": 68.02,
+   "trans": "cortina"
+  },
+  {
+   "id": "mostras",
+   "ini": 68.02,
+   "fim": 77.34,
+   "trans": "zoom"
+  },
+  {
+   "id": "escola",
+   "ini": 77.34,
+   "fim": 87.48,
+   "trans": "iris"
+  },
+  {
+   "id": "acoes",
+   "ini": 87.48,
+   "fim": 95.32,
+   "trans": "wipe"
+  },
+  {
+   "id": "futuro",
+   "ini": 95.32,
+   "fim": 109.46,
+   "trans": "wipe"
+  },
+  {
+   "id": "fecho",
+   "ini": 109.46,
+   "fim": 120.0,
+   "trans": "flash"
+  }
+ ],
+ "marcos": {
+  "abertura": {
+   "local": 1.8,
+   "letras": 5.31,
+   "lema": 7.82,
+   "lema_fim": 10.68
+  },
+  "origem": {
+   "habito": 12.62,
+   "casa_txt": 13.3,
+   "casa": 14.58,
+   "chip1": 15.3,
+   "chip2": 16.58,
+   "chip3": 18.38
+  },
+  "2014": {
+   "ano": 20.62,
+   "grupo": 23.04,
+   "cine": 25.18,
+   "nota": 26.84
+  },
+  "2022": {
+   "ano": 27.88,
+   "verso": 29.76,
+   "verso_fim": 32.22,
+   "flores": 34.96
+  },
+  "2025": {
+   "ano": 36.84,
+   "rotulo": 37.58,
+   "ponto": 38.62,
+   "check": 39.88,
+   "linha": 41.48
+  },
+  "pessoas": {
+   "num": 44.68,
+   "artistas": 44.68,
+   "b1": 45.66,
+   "b2": 46.74,
+   "b3": 47.6,
+   "b4": 48.38,
+   "b5": 49.08
+  },
+  "filmes": {
+   "num": 50.54,
+   "sub": 51.06
+  },
+  "temas": {
+   "p1": 61.68,
+   "p2": 62.24,
+   "p3": 63.76,
+   "p4": 64.56,
+   "frase": 65.46
+  },
+  "mostras": {
+   "titulo": 68.34,
+   "m1": 71.12,
+   "m2": 73.8,
+   "estados": 76.1
+  },
+  "escola": {
+   "cinema": 82.18,
+   "carro_ini": 83.36,
+   "carro_fim": 85.54,
+   "local": 84.52
+  },
+  "acoes": {
+   "rotulo": 87.9,
+   "c1": 88.52,
+   "c2": 89.48,
+   "c3": 90.32,
+   "c4": 90.76,
+   "f1": 91.86,
+   "f2": 92.78,
+   "f3": 93.74,
+   "f4": 94.5
+  },
+  "futuro": {
+   "ano": 96.58,
+   "r1": 96.92,
+   "r1b": 101.28,
+   "r2": 101.86,
+   "r3": 105.7
+  },
+  "fecho": {
+   "letras": 109.61999999999999,
+   "ponto": 111.42,
+   "lema": 113.28,
+   "lema_fim": 116.6
+  },
+  "f-flores": {
+   "titulo": 52.400000000000006
+  },
+  "f-lidia": {
+   "titulo": 53.160000000000004
+  },
+  "f-fita": {
+   "titulo": 54.080000000000005
+  },
+  "f-camadas": {
+   "titulo": 54.74
+  },
+  "f-toto": {
+   "titulo": 55.68
+  },
+  "f-olhares": {
+   "titulo": 57.52
+  },
+  "f-folia": {
+   "titulo": 58.940000000000005
+  }
+ },
+ "palavras": [
+  {
+   "w": "Ji-Paraná,",
+   "i": 2.14,
+   "f": 2.62,
+   "frase": 0,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "interior",
+   "i": 2.88,
+   "f": 3.18,
+   "frase": 0,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 3.18,
+   "f": 3.48,
+   "frase": 0,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "Rondônia.",
+   "i": 3.48,
+   "f": 3.98,
+   "frase": 0,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "Aqui,",
+   "i": 4.38,
+   "f": 4.72,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "um",
+   "i": 5.0,
+   "f": 5.12,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "grupo",
+   "i": 5.12,
+   "f": 5.36,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 5.36,
+   "f": 5.56,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "artistas",
+   "i": 5.56,
+   "f": 6.16,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "cabe",
+   "i": 6.16,
+   "f": 6.38,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": true
+  },
+  {
+   "w": "inteiro",
+   "i": 6.38,
+   "f": 6.84,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "numa",
+   "i": 6.84,
+   "f": 7.1,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "frase,",
+   "i": 7.1,
+   "f": 7.56,
+   "frase": 1,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "porque",
+   "i": 7.82,
+   "f": 8.14,
+   "frase": 2,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "eu",
+   "i": 8.14,
+   "f": 8.44,
+   "frase": 2,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "preciso",
+   "i": 8.44,
+   "f": 8.96,
+   "frase": 2,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "respirar",
+   "i": 8.96,
+   "f": 10.04,
+   "frase": 2,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "arte.",
+   "i": 10.04,
+   "f": 10.68,
+   "frase": 2,
+   "cena": "abertura",
+   "quebra": false
+  },
+  {
+   "w": "Antes",
+   "i": 10.94,
+   "f": 11.18,
+   "frase": 3,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "do",
+   "i": 11.18,
+   "f": 11.34,
+   "frase": 3,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "nome,",
+   "i": 11.34,
+   "f": 11.72,
+   "frase": 3,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "era",
+   "i": 12.02,
+   "f": 12.22,
+   "frase": 3,
+   "cena": "origem",
+   "quebra": true
+  },
+  {
+   "w": "só",
+   "i": 12.22,
+   "f": 12.46,
+   "frase": 3,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "um",
+   "i": 12.46,
+   "f": 12.62,
+   "frase": 3,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "hábito,",
+   "i": 12.62,
+   "f": 13.06,
+   "frase": 3,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "gente",
+   "i": 13.3,
+   "f": 13.64,
+   "frase": 4,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "se",
+   "i": 13.64,
+   "f": 13.9,
+   "frase": 4,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "reunindo",
+   "i": 13.9,
+   "f": 14.28,
+   "frase": 4,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "numa",
+   "i": 14.28,
+   "f": 14.58,
+   "frase": 4,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "casa,",
+   "i": 14.58,
+   "f": 15.04,
+   "frase": 4,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "para",
+   "i": 15.3,
+   "f": 15.54,
+   "frase": 5,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "tocar",
+   "i": 15.54,
+   "f": 15.74,
+   "frase": 5,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "violão,",
+   "i": 15.74,
+   "f": 16.32,
+   "frase": 5,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "para",
+   "i": 16.58,
+   "f": 16.66,
+   "frase": 6,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "discutir",
+   "i": 16.66,
+   "f": 17.16,
+   "frase": 6,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "política",
+   "i": 17.16,
+   "f": 17.4,
+   "frase": 6,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "cultural,",
+   "i": 17.4,
+   "f": 17.98,
+   "frase": 6,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "para",
+   "i": 18.38,
+   "f": 18.48,
+   "frase": 7,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "escrever",
+   "i": 18.48,
+   "f": 18.82,
+   "frase": 7,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "projetos.",
+   "i": 18.82,
+   "f": 19.64,
+   "frase": 7,
+   "cena": "origem",
+   "quebra": false
+  },
+  {
+   "w": "Em",
+   "i": 19.82,
+   "f": 19.9,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "2014,",
+   "i": 19.9,
+   "f": 20.62,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "desses",
+   "i": 21.14,
+   "f": 21.4,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "encontros,",
+   "i": 21.4,
+   "f": 22.14,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "nasceram",
+   "i": 22.36,
+   "f": 22.88,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": true
+  },
+  {
+   "w": "o",
+   "i": 22.88,
+   "f": 23.04,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "Grupo",
+   "i": 23.04,
+   "f": 23.22,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "Parafernália",
+   "i": 23.22,
+   "f": 24.0,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 24.0,
+   "f": 24.1,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "Teatro",
+   "i": 24.1,
+   "f": 24.62,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 24.62,
+   "f": 25.1,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": true
+  },
+  {
+   "w": "o",
+   "i": 25.1,
+   "f": 25.18,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "Cineclube",
+   "i": 25.18,
+   "f": 25.84,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "Ano",
+   "i": 25.84,
+   "f": 26.32,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "41.",
+   "i": 26.32,
+   "f": 26.84,
+   "frase": 8,
+   "cena": "2014",
+   "quebra": false
+  },
+  {
+   "w": "Em",
+   "i": 26.84,
+   "f": 27.34,
+   "frase": 9,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "2022,",
+   "i": 27.34,
+   "f": 27.88,
+   "frase": 9,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "o",
+   "i": 28.7,
+   "f": 28.8,
+   "frase": 9,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "nome",
+   "i": 28.8,
+   "f": 29.06,
+   "frase": 9,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "chegou.",
+   "i": 29.06,
+   "f": 29.46,
+   "frase": 9,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "Veio",
+   "i": 29.76,
+   "f": 29.94,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 29.94,
+   "f": 30.08,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "dois",
+   "i": 30.08,
+   "f": 30.3,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "versos",
+   "i": 30.3,
+   "f": 30.78,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 30.78,
+   "f": 30.88,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": true
+  },
+  {
+   "w": "um",
+   "i": 30.88,
+   "f": 30.96,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "poema",
+   "i": 30.96,
+   "f": 31.32,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 31.32,
+   "f": 31.48,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "Carlos",
+   "i": 31.48,
+   "f": 31.76,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "Reis.",
+   "i": 31.76,
+   "f": 32.22,
+   "frase": 10,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "E",
+   "i": 32.44,
+   "f": 32.54,
+   "frase": 11,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "estreou",
+   "i": 32.54,
+   "f": 32.9,
+   "frase": 11,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "nos",
+   "i": 32.9,
+   "f": 33.08,
+   "frase": 11,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "créditos",
+   "i": 33.08,
+   "f": 33.6,
+   "frase": 11,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 33.6,
+   "f": 33.82,
+   "frase": 11,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "um",
+   "i": 33.82,
+   "f": 33.94,
+   "frase": 11,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "curta:",
+   "i": 33.94,
+   "f": 34.4,
+   "frase": 11,
+   "cena": "2022",
+   "quebra": false
+  },
+  {
+   "w": "Flores.",
+   "i": 34.96,
+   "f": 35.32,
+   "frase": 11,
+   "cena": "2022",
+   "quebra": true
+  },
+  {
+   "w": "Em",
+   "i": 36.18,
+   "f": 36.26,
+   "frase": 12,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "2025,",
+   "i": 36.26,
+   "f": 36.84,
+   "frase": 12,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "veio",
+   "i": 37.1,
+   "f": 37.5,
+   "frase": 12,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "o",
+   "i": 37.5,
+   "f": 37.58,
+   "frase": 12,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "reconhecimento:",
+   "i": 37.58,
+   "f": 38.46,
+   "frase": 12,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "Ponto",
+   "i": 38.62,
+   "f": 38.84,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 38.84,
+   "f": 39.04,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "Cultura,",
+   "i": 39.04,
+   "f": 39.48,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "pelo",
+   "i": 39.74,
+   "f": 39.88,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": true
+  },
+  {
+   "w": "Ministério",
+   "i": 39.88,
+   "f": 40.48,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "da",
+   "i": 40.48,
+   "f": 40.62,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "Cultura,",
+   "i": 40.62,
+   "f": 41.14,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "na",
+   "i": 41.38,
+   "f": 41.48,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": true
+  },
+  {
+   "w": "Política",
+   "i": 41.48,
+   "f": 41.92,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "Nacional",
+   "i": 41.92,
+   "f": 42.32,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "Cultura",
+   "i": 42.32,
+   "f": 42.9,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "Viva.",
+   "i": 42.9,
+   "f": 43.28,
+   "frase": 13,
+   "cena": "2025",
+   "quebra": false
+  },
+  {
+   "w": "Hoje,",
+   "i": 43.58,
+   "f": 43.9,
+   "frase": 14,
+   "cena": "pessoas",
+   "quebra": false
+  },
+  {
+   "w": "são",
+   "i": 44.1,
+   "f": 44.38,
+   "frase": 14,
+   "cena": "pessoas",
+   "quebra": false
+  },
+  {
+   "w": "12",
+   "i": 44.38,
+   "f": 44.68,
+   "frase": 14,
+   "cena": "pessoas",
+   "quebra": false
+  },
+  {
+   "w": "artistas.",
+   "i": 44.68,
+   "f": 45.36,
+   "frase": 14,
+   "cena": "pessoas",
+   "quebra": false
+  },
+  {
+   "w": "Audiovisual,",
+   "i": 45.66,
+   "f": 46.3,
+   "frase": 15,
+   "cena": "pessoas",
+   "quebra": false
+  },
+  {
+   "w": "música,",
+   "i": 46.74,
+   "f": 47.16,
+   "frase": 15,
+   "cena": "pessoas",
+   "quebra": false
+  },
+  {
+   "w": "teatro,",
+   "i": 47.6,
+   "f": 48.02,
+   "frase": 15,
+   "cena": "pessoas",
+   "quebra": false
+  },
+  {
+   "w": "circo,",
+   "i": 48.38,
+   "f": 48.76,
+   "frase": 15,
+   "cena": "pessoas",
+   "quebra": true
+  },
+  {
+   "w": "literatura.",
+   "i": 49.08,
+   "f": 49.72,
+   "frase": 15,
+   "cena": "pessoas",
+   "quebra": false
+  },
+  {
+   "w": "E",
+   "i": 49.72,
+   "f": 50.14,
+   "frase": 16,
+   "cena": "filmes",
+   "quebra": false
+  },
+  {
+   "w": "sete",
+   "i": 50.14,
+   "f": 50.54,
+   "frase": 16,
+   "cena": "filmes",
+   "quebra": false
+  },
+  {
+   "w": "filmes,",
+   "i": 50.54,
+   "f": 50.96,
+   "frase": 16,
+   "cena": "filmes",
+   "quebra": false
+  },
+  {
+   "w": "todos",
+   "i": 51.06,
+   "f": 51.26,
+   "frase": 16,
+   "cena": "filmes",
+   "quebra": true
+  },
+  {
+   "w": "feitos",
+   "i": 51.26,
+   "f": 51.76,
+   "frase": 16,
+   "cena": "filmes",
+   "quebra": false
+  },
+  {
+   "w": "aqui.",
+   "i": 51.76,
+   "f": 52.1,
+   "frase": 16,
+   "cena": "filmes",
+   "quebra": false
+  },
+  {
+   "w": "Flores,",
+   "i": 52.4,
+   "f": 52.76,
+   "frase": 17,
+   "cena": "f-flores",
+   "quebra": false
+  },
+  {
+   "w": "Dona",
+   "i": 53.16,
+   "f": 53.38,
+   "frase": 18,
+   "cena": "f-lidia",
+   "quebra": false
+  },
+  {
+   "w": "Lídia,",
+   "i": 53.38,
+   "f": 53.8,
+   "frase": 18,
+   "cena": "f-lidia",
+   "quebra": false
+  },
+  {
+   "w": "Fita,",
+   "i": 54.08,
+   "f": 54.48,
+   "frase": 19,
+   "cena": "f-fita",
+   "quebra": false
+  },
+  {
+   "w": "Camadas,",
+   "i": 54.74,
+   "f": 55.28,
+   "frase": 20,
+   "cena": "f-camadas",
+   "quebra": false
+  },
+  {
+   "w": "Deus,",
+   "i": 55.68,
+   "f": 55.86,
+   "frase": 21,
+   "cena": "f-toto",
+   "quebra": false
+  },
+  {
+   "w": "eu",
+   "i": 55.86,
+   "f": 56.1,
+   "frase": 21,
+   "cena": "f-toto",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 56.1,
+   "f": 56.26,
+   "frase": 21,
+   "cena": "f-toto",
+   "quebra": false
+  },
+  {
+   "w": "o",
+   "i": 56.26,
+   "f": 56.38,
+   "frase": 21,
+   "cena": "f-toto",
+   "quebra": false
+  },
+  {
+   "w": "cachorro",
+   "i": 56.38,
+   "f": 56.68,
+   "frase": 21,
+   "cena": "f-toto",
+   "quebra": false
+  },
+  {
+   "w": "Totó,",
+   "i": 56.68,
+   "f": 57.2,
+   "frase": 21,
+   "cena": "f-toto",
+   "quebra": false
+  },
+  {
+   "w": "o",
+   "i": 57.52,
+   "f": 57.58,
+   "frase": 22,
+   "cena": "f-olhares",
+   "quebra": false
+  },
+  {
+   "w": "documentário",
+   "i": 57.58,
+   "f": 58.26,
+   "frase": 22,
+   "cena": "f-olhares",
+   "quebra": false
+  },
+  {
+   "w": "Olhares",
+   "i": 58.26,
+   "f": 58.94,
+   "frase": 22,
+   "cena": "f-olhares",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 58.94,
+   "f": 59.18,
+   "frase": 23,
+   "cena": "f-folia",
+   "quebra": false
+  },
+  {
+   "w": "Devoção",
+   "i": 59.18,
+   "f": 59.74,
+   "frase": 23,
+   "cena": "f-folia",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 59.74,
+   "f": 59.94,
+   "frase": 23,
+   "cena": "f-folia",
+   "quebra": false
+  },
+  {
+   "w": "Folia",
+   "i": 59.94,
+   "f": 60.28,
+   "frase": 23,
+   "cena": "f-folia",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 60.28,
+   "f": 60.5,
+   "frase": 23,
+   "cena": "f-folia",
+   "quebra": false
+  },
+  {
+   "w": "Reis.",
+   "i": 60.5,
+   "f": 60.86,
+   "frase": 23,
+   "cena": "f-folia",
+   "quebra": false
+  },
+  {
+   "w": "Histórias",
+   "i": 61.12,
+   "f": 61.5,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 61.5,
+   "f": 61.68,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "luto,",
+   "i": 61.68,
+   "f": 61.98,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 62.16,
+   "f": 62.24,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": true
+  },
+  {
+   "w": "violência",
+   "i": 62.24,
+   "f": 62.64,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "contra",
+   "i": 62.64,
+   "f": 62.86,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "a",
+   "i": 62.86,
+   "f": 62.91,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "mulher,",
+   "i": 62.86,
+   "f": 63.22,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 63.56,
+   "f": 63.76,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": true
+  },
+  {
+   "w": "fé,",
+   "i": 63.76,
+   "f": 64.04,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 64.48,
+   "f": 64.56,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "música.",
+   "i": 64.56,
+   "f": 65.06,
+   "frase": 24,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "Temas",
+   "i": 65.46,
+   "f": 65.62,
+   "frase": 25,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "pouco",
+   "i": 65.62,
+   "f": 65.86,
+   "frase": 25,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "explorados",
+   "i": 65.86,
+   "f": 66.5,
+   "frase": 25,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "no",
+   "i": 66.5,
+   "f": 66.76,
+   "frase": 25,
+   "cena": "temas",
+   "quebra": true
+  },
+  {
+   "w": "cinema",
+   "i": 66.76,
+   "f": 67.06,
+   "frase": 25,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "feito",
+   "i": 67.06,
+   "f": 67.38,
+   "frase": 25,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "em",
+   "i": 67.38,
+   "f": 67.58,
+   "frase": 25,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "Rondônia.",
+   "i": 67.58,
+   "f": 68.02,
+   "frase": 25,
+   "cena": "temas",
+   "quebra": false
+  },
+  {
+   "w": "Devoção",
+   "i": 68.34,
+   "f": 68.76,
+   "frase": 26,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 68.76,
+   "f": 68.92,
+   "frase": 26,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Folia",
+   "i": 68.92,
+   "f": 69.18,
+   "frase": 26,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 69.18,
+   "f": 69.36,
+   "frase": 26,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Reis",
+   "i": 69.36,
+   "f": 69.66,
+   "frase": 26,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "foi",
+   "i": 69.66,
+   "f": 69.82,
+   "frase": 26,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "além.",
+   "i": 69.82,
+   "f": 70.12,
+   "frase": 26,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Passou",
+   "i": 70.42,
+   "f": 70.66,
+   "frase": 27,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "pela",
+   "i": 70.66,
+   "f": 70.84,
+   "frase": 27,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Mostra",
+   "i": 70.84,
+   "f": 71.12,
+   "frase": 27,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Internacional",
+   "i": 71.12,
+   "f": 71.86,
+   "frase": 27,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 71.86,
+   "f": 72.16,
+   "frase": 27,
+   "cena": "mostras",
+   "quebra": true
+  },
+  {
+   "w": "Cinema",
+   "i": 72.16,
+   "f": 72.42,
+   "frase": 27,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Negro",
+   "i": 72.42,
+   "f": 72.84,
+   "frase": 27,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 72.84,
+   "f": 73.12,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "pela",
+   "i": 73.12,
+   "f": 73.38,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Mostra",
+   "i": 73.38,
+   "f": 73.8,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Sesc",
+   "i": 73.8,
+   "f": 74.58,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Amazônia",
+   "i": 74.74,
+   "f": 75.08,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": true
+  },
+  {
+   "w": "das",
+   "i": 75.08,
+   "f": 75.36,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Artes,",
+   "i": 75.36,
+   "f": 75.84,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "em",
+   "i": 75.96,
+   "f": 76.1,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": true
+  },
+  {
+   "w": "dez",
+   "i": 76.1,
+   "f": 76.34,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "estados",
+   "i": 76.34,
+   "f": 76.78,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "brasileiros.",
+   "i": 76.78,
+   "f": 77.54,
+   "frase": 28,
+   "cena": "mostras",
+   "quebra": false
+  },
+  {
+   "w": "Mas",
+   "i": 77.54,
+   "f": 77.9,
+   "frase": 29,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "o",
+   "i": 77.9,
+   "f": 78.02,
+   "frase": 29,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "Respirartes",
+   "i": 78.02,
+   "f": 78.62,
+   "frase": 29,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "não",
+   "i": 78.62,
+   "f": 78.7,
+   "frase": 29,
+   "cena": "escola",
+   "quebra": true
+  },
+  {
+   "w": "cabe",
+   "i": 78.7,
+   "f": 78.92,
+   "frase": 29,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "só",
+   "i": 78.92,
+   "f": 79.1,
+   "frase": 29,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "na",
+   "i": 79.1,
+   "f": 79.2,
+   "frase": 29,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "tela.",
+   "i": 79.2,
+   "f": 79.6,
+   "frase": 29,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "Já",
+   "i": 79.8,
+   "f": 79.94,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "colocou",
+   "i": 79.94,
+   "f": 80.32,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "som,",
+   "i": 80.32,
+   "f": 80.66,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "livros",
+   "i": 81.04,
+   "f": 81.34,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 81.34,
+   "f": 81.46,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": true
+  },
+  {
+   "w": "equipamentos",
+   "i": 81.46,
+   "f": 82.0,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 82.0,
+   "f": 82.18,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "cinema",
+   "i": 82.18,
+   "f": 82.48,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "no",
+   "i": 82.48,
+   "f": 82.68,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "carro",
+   "i": 82.68,
+   "f": 83.02,
+   "frase": 30,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 83.02,
+   "f": 83.36,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "levou",
+   "i": 83.36,
+   "f": 83.66,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "tudo",
+   "i": 83.66,
+   "f": 83.84,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "até",
+   "i": 83.84,
+   "f": 84.14,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "a",
+   "i": 84.14,
+   "f": 84.22,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": true
+  },
+  {
+   "w": "Escola",
+   "i": 84.22,
+   "f": 84.52,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "Jorge",
+   "i": 84.52,
+   "f": 84.94,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "Teixeira,",
+   "i": 84.94,
+   "f": 85.54,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "no",
+   "i": 85.86,
+   "f": 86.06,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": true
+  },
+  {
+   "w": "distrito",
+   "i": 86.06,
+   "f": 86.48,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 86.48,
+   "f": 86.7,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "Nova",
+   "i": 86.7,
+   "f": 86.88,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "Londrina.",
+   "i": 86.88,
+   "f": 87.42,
+   "frase": 31,
+   "cena": "escola",
+   "quebra": false
+  },
+  {
+   "w": "E",
+   "i": 87.78,
+   "f": 87.9,
+   "frase": 32,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "segue",
+   "i": 87.9,
+   "f": 88.12,
+   "frase": 32,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "levando",
+   "i": 88.12,
+   "f": 88.52,
+   "frase": 32,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "música,",
+   "i": 88.52,
+   "f": 88.98,
+   "frase": 32,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "circo,",
+   "i": 89.48,
+   "f": 90.0,
+   "frase": 32,
+   "cena": "acoes",
+   "quebra": true
+  },
+  {
+   "w": "teatro",
+   "i": 90.32,
+   "f": 90.64,
+   "frase": 32,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "e",
+   "i": 90.64,
+   "f": 90.76,
+   "frase": 32,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "literatura",
+   "i": 90.76,
+   "f": 91.4,
+   "frase": 32,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "para",
+   "i": 91.4,
+   "f": 91.86,
+   "frase": 33,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "escolas,",
+   "i": 91.86,
+   "f": 92.36,
+   "frase": 33,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "aldeias,",
+   "i": 92.78,
+   "f": 93.36,
+   "frase": 33,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "feiras",
+   "i": 93.74,
+   "f": 94.14,
+   "frase": 33,
+   "cena": "acoes",
+   "quebra": true
+  },
+  {
+   "w": "e",
+   "i": 94.14,
+   "f": 94.5,
+   "frase": 33,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "fóruns",
+   "i": 94.5,
+   "f": 94.88,
+   "frase": 33,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 94.88,
+   "f": 95.0,
+   "frase": 33,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "cultura.",
+   "i": 95.0,
+   "f": 95.32,
+   "frase": 33,
+   "cena": "acoes",
+   "quebra": false
+  },
+  {
+   "w": "E",
+   "i": 95.64,
+   "f": 95.78,
+   "frase": 34,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "vem",
+   "i": 95.78,
+   "f": 95.9,
+   "frase": 34,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "mais",
+   "i": 95.9,
+   "f": 96.14,
+   "frase": 34,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "por",
+   "i": 96.14,
+   "f": 96.34,
+   "frase": 34,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "aí:",
+   "i": 96.34,
+   "f": 96.58,
+   "frase": 34,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "a",
+   "i": 96.88,
+   "f": 96.92,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "volta",
+   "i": 96.92,
+   "f": 97.16,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "do",
+   "i": 97.16,
+   "f": 97.36,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Cineclube,",
+   "i": 97.36,
+   "f": 97.96,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "agora",
+   "i": 98.2,
+   "f": 98.44,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": true
+  },
+  {
+   "w": "como",
+   "i": 98.44,
+   "f": 98.76,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Cineclube",
+   "i": 98.76,
+   "f": 99.42,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Respirartes,",
+   "i": 99.52,
+   "f": 100.3,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "em",
+   "i": 100.36,
+   "f": 100.5,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": true
+  },
+  {
+   "w": "parceria",
+   "i": 100.5,
+   "f": 101.04,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "com",
+   "i": 101.04,
+   "f": 101.2,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "a",
+   "i": 101.2,
+   "f": 101.28,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "UNIR.",
+   "i": 101.28,
+   "f": 101.6,
+   "frase": 35,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "A",
+   "i": 101.84,
+   "f": 101.86,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Mostra",
+   "i": 101.86,
+   "f": 102.12,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Curta",
+   "i": 102.12,
+   "f": 102.7,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Rio",
+   "i": 102.78,
+   "f": 102.96,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Ji-Paraná,",
+   "i": 103.1,
+   "f": 103.64,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "com",
+   "i": 103.96,
+   "f": 104.0,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": true
+  },
+  {
+   "w": "filmes",
+   "i": 104.0,
+   "f": 104.42,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "da",
+   "i": 104.42,
+   "f": 104.56,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "cidade.",
+   "i": 104.56,
+   "f": 105.06,
+   "frase": 36,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "E",
+   "i": 105.06,
+   "f": 105.36,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "a",
+   "i": 105.36,
+   "f": 105.48,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "mostra",
+   "i": 105.48,
+   "f": 105.7,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "fotográfica",
+   "i": 105.7,
+   "f": 106.72,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Do",
+   "i": 106.72,
+   "f": 106.92,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": true
+  },
+  {
+   "w": "Oriente",
+   "i": 106.92,
+   "f": 107.34,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "a",
+   "i": 107.34,
+   "f": 107.44,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Belém,",
+   "i": 107.44,
+   "f": 107.88,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "com",
+   "i": 108.0,
+   "f": 108.08,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": true
+  },
+  {
+   "w": "a",
+   "i": 108.08,
+   "f": 108.12,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Companhia",
+   "i": 108.12,
+   "f": 108.68,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 108.68,
+   "f": 108.76,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Santos",
+   "i": 108.76,
+   "f": 109.0,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Reis.",
+   "i": 109.0,
+   "f": 109.56,
+   "frase": 37,
+   "cena": "futuro",
+   "quebra": false
+  },
+  {
+   "w": "Coletivo",
+   "i": 109.82,
+   "f": 110.38,
+   "frase": 38,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "Respirartes,",
+   "i": 110.38,
+   "f": 111.28,
+   "frase": 38,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "Ponto",
+   "i": 111.42,
+   "f": 111.64,
+   "frase": 39,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 111.64,
+   "f": 111.88,
+   "frase": 39,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "Cultura",
+   "i": 111.88,
+   "f": 112.26,
+   "frase": 39,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "de",
+   "i": 112.26,
+   "f": 112.52,
+   "frase": 39,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "Ji-Paraná,",
+   "i": 112.52,
+   "f": 113.04,
+   "frase": 39,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "porque",
+   "i": 113.28,
+   "f": 113.72,
+   "frase": 40,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "eu",
+   "i": 113.72,
+   "f": 114.14,
+   "frase": 40,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "preciso",
+   "i": 114.14,
+   "f": 114.8,
+   "frase": 40,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "respirar",
+   "i": 114.8,
+   "f": 115.92,
+   "frase": 40,
+   "cena": "fecho",
+   "quebra": false
+  },
+  {
+   "w": "arte.",
+   "i": 115.92,
+   "f": 116.6,
+   "frase": 40,
+   "cena": "fecho",
+   "quebra": false
+  }
+ ],
+ "legendas": [
+  {
+   "ini": 2.02,
+   "fim": 4.26,
+   "palavras": [
+    {
+     "w": "Ji-Paraná,",
+     "i": 2.14,
+     "f": 2.62
+    },
+    {
+     "w": "interior",
+     "i": 2.88,
+     "f": 3.18
+    },
+    {
+     "w": "de",
+     "i": 3.18,
+     "f": 3.48
+    },
+    {
+     "w": "Rondônia.",
+     "i": 3.48,
+     "f": 3.98
+    }
+   ]
+  },
+  {
+   "ini": 4.26,
+   "fim": 6.04,
+   "palavras": [
+    {
+     "w": "Aqui,",
+     "i": 4.38,
+     "f": 4.72
+    },
+    {
+     "w": "um",
+     "i": 5.0,
+     "f": 5.12
+    },
+    {
+     "w": "grupo",
+     "i": 5.12,
+     "f": 5.36
+    },
+    {
+     "w": "de",
+     "i": 5.36,
+     "f": 5.56
+    },
+    {
+     "w": "artistas",
+     "i": 5.56,
+     "f": 6.16
+    }
+   ]
+  },
+  {
+   "ini": 6.04,
+   "fim": 7.7,
+   "palavras": [
+    {
+     "w": "cabe",
+     "i": 6.16,
+     "f": 6.38
+    },
+    {
+     "w": "inteiro",
+     "i": 6.38,
+     "f": 6.84
+    },
+    {
+     "w": "numa",
+     "i": 6.84,
+     "f": 7.1
+    },
+    {
+     "w": "frase,",
+     "i": 7.1,
+     "f": 7.56
+    }
+   ]
+  },
+  {
+   "ini": 7.7,
+   "fim": 10.82,
+   "palavras": [
+    {
+     "w": "porque",
+     "i": 7.82,
+     "f": 8.14
+    },
+    {
+     "w": "eu",
+     "i": 8.14,
+     "f": 8.44
+    },
+    {
+     "w": "preciso",
+     "i": 8.44,
+     "f": 8.96
+    },
+    {
+     "w": "respirar",
+     "i": 8.96,
+     "f": 10.04
+    },
+    {
+     "w": "arte.",
+     "i": 10.04,
+     "f": 10.68
+    }
+   ]
+  },
+  {
+   "ini": 10.82,
+   "fim": 11.9,
+   "palavras": [
+    {
+     "w": "Antes",
+     "i": 10.94,
+     "f": 11.18
+    },
+    {
+     "w": "do",
+     "i": 11.18,
+     "f": 11.34
+    },
+    {
+     "w": "nome,",
+     "i": 11.34,
+     "f": 11.72
+    }
+   ]
+  },
+  {
+   "ini": 11.9,
+   "fim": 13.18,
+   "palavras": [
+    {
+     "w": "era",
+     "i": 12.02,
+     "f": 12.22
+    },
+    {
+     "w": "só",
+     "i": 12.22,
+     "f": 12.46
+    },
+    {
+     "w": "um",
+     "i": 12.46,
+     "f": 12.62
+    },
+    {
+     "w": "hábito,",
+     "i": 12.62,
+     "f": 13.06
+    }
+   ]
+  },
+  {
+   "ini": 13.18,
+   "fim": 15.18,
+   "palavras": [
+    {
+     "w": "gente",
+     "i": 13.3,
+     "f": 13.64
+    },
+    {
+     "w": "se",
+     "i": 13.64,
+     "f": 13.9
+    },
+    {
+     "w": "reunindo",
+     "i": 13.9,
+     "f": 14.28
+    },
+    {
+     "w": "numa",
+     "i": 14.28,
+     "f": 14.58
+    },
+    {
+     "w": "casa,",
+     "i": 14.58,
+     "f": 15.04
+    }
+   ]
+  },
+  {
+   "ini": 15.18,
+   "fim": 16.46,
+   "palavras": [
+    {
+     "w": "para",
+     "i": 15.3,
+     "f": 15.54
+    },
+    {
+     "w": "tocar",
+     "i": 15.54,
+     "f": 15.74
+    },
+    {
+     "w": "violão,",
+     "i": 15.74,
+     "f": 16.32
+    }
+   ]
+  },
+  {
+   "ini": 16.46,
+   "fim": 18.26,
+   "palavras": [
+    {
+     "w": "para",
+     "i": 16.58,
+     "f": 16.66
+    },
+    {
+     "w": "discutir",
+     "i": 16.66,
+     "f": 17.16
+    },
+    {
+     "w": "política",
+     "i": 17.16,
+     "f": 17.4
+    },
+    {
+     "w": "cultural,",
+     "i": 17.4,
+     "f": 17.98
+    }
+   ]
+  },
+  {
+   "ini": 18.26,
+   "fim": 19.7,
+   "palavras": [
+    {
+     "w": "para",
+     "i": 18.38,
+     "f": 18.48
+    },
+    {
+     "w": "escrever",
+     "i": 18.48,
+     "f": 18.82
+    },
+    {
+     "w": "projetos.",
+     "i": 18.82,
+     "f": 19.64
+    }
+   ]
+  },
+  {
+   "ini": 19.7,
+   "fim": 22.24,
+   "palavras": [
+    {
+     "w": "Em",
+     "i": 19.82,
+     "f": 19.9
+    },
+    {
+     "w": "2014,",
+     "i": 19.9,
+     "f": 20.62
+    },
+    {
+     "w": "desses",
+     "i": 21.14,
+     "f": 21.4
+    },
+    {
+     "w": "encontros,",
+     "i": 21.4,
+     "f": 22.14
+    }
+   ]
+  },
+  {
+   "ini": 22.24,
+   "fim": 24.5,
+   "palavras": [
+    {
+     "w": "nasceram",
+     "i": 22.36,
+     "f": 22.88
+    },
+    {
+     "w": "o",
+     "i": 22.88,
+     "f": 23.04
+    },
+    {
+     "w": "Grupo",
+     "i": 23.04,
+     "f": 23.22
+    },
+    {
+     "w": "Parafernália",
+     "i": 23.22,
+     "f": 24.0
+    },
+    {
+     "w": "de",
+     "i": 24.0,
+     "f": 24.1
+    },
+    {
+     "w": "Teatro",
+     "i": 24.1,
+     "f": 24.62
+    }
+   ]
+  },
+  {
+   "ini": 24.5,
+   "fim": 26.72,
+   "palavras": [
+    {
+     "w": "e",
+     "i": 24.62,
+     "f": 25.1
+    },
+    {
+     "w": "o",
+     "i": 25.1,
+     "f": 25.18
+    },
+    {
+     "w": "Cineclube",
+     "i": 25.18,
+     "f": 25.84
+    },
+    {
+     "w": "Ano",
+     "i": 25.84,
+     "f": 26.32
+    },
+    {
+     "w": "41.",
+     "i": 26.32,
+     "f": 26.84
+    }
+   ]
+  },
+  {
+   "ini": 26.72,
+   "fim": 29.64,
+   "palavras": [
+    {
+     "w": "Em",
+     "i": 26.84,
+     "f": 27.34
+    },
+    {
+     "w": "2022,",
+     "i": 27.34,
+     "f": 27.88
+    },
+    {
+     "w": "o",
+     "i": 28.7,
+     "f": 28.8
+    },
+    {
+     "w": "nome",
+     "i": 28.8,
+     "f": 29.06
+    },
+    {
+     "w": "chegou.",
+     "i": 29.06,
+     "f": 29.46
+    }
+   ]
+  },
+  {
+   "ini": 29.64,
+   "fim": 30.66,
+   "palavras": [
+    {
+     "w": "Veio",
+     "i": 29.76,
+     "f": 29.94
+    },
+    {
+     "w": "de",
+     "i": 29.94,
+     "f": 30.08
+    },
+    {
+     "w": "dois",
+     "i": 30.08,
+     "f": 30.3
+    },
+    {
+     "w": "versos",
+     "i": 30.3,
+     "f": 30.78
+    }
+   ]
+  },
+  {
+   "ini": 30.66,
+   "fim": 32.32,
+   "palavras": [
+    {
+     "w": "de",
+     "i": 30.78,
+     "f": 30.88
+    },
+    {
+     "w": "um",
+     "i": 30.88,
+     "f": 30.96
+    },
+    {
+     "w": "poema",
+     "i": 30.96,
+     "f": 31.32
+    },
+    {
+     "w": "de",
+     "i": 31.32,
+     "f": 31.48
+    },
+    {
+     "w": "Carlos",
+     "i": 31.48,
+     "f": 31.76
+    },
+    {
+     "w": "Reis.",
+     "i": 31.76,
+     "f": 32.22
+    }
+   ]
+  },
+  {
+   "ini": 32.32,
+   "fim": 34.84,
+   "palavras": [
+    {
+     "w": "E",
+     "i": 32.44,
+     "f": 32.54
+    },
+    {
+     "w": "estreou",
+     "i": 32.54,
+     "f": 32.9
+    },
+    {
+     "w": "nos",
+     "i": 32.9,
+     "f": 33.08
+    },
+    {
+     "w": "créditos",
+     "i": 33.08,
+     "f": 33.6
+    },
+    {
+     "w": "de",
+     "i": 33.6,
+     "f": 33.82
+    },
+    {
+     "w": "um",
+     "i": 33.82,
+     "f": 33.94
+    },
+    {
+     "w": "curta:",
+     "i": 33.94,
+     "f": 34.4
+    }
+   ]
+  },
+  {
+   "ini": 34.84,
+   "fim": 35.87,
+   "palavras": [
+    {
+     "w": "Flores.",
+     "i": 34.96,
+     "f": 35.32
+    }
+   ]
+  },
+  {
+   "ini": 36.06,
+   "fim": 38.5,
+   "palavras": [
+    {
+     "w": "Em",
+     "i": 36.18,
+     "f": 36.26
+    },
+    {
+     "w": "2025,",
+     "i": 36.26,
+     "f": 36.84
+    },
+    {
+     "w": "veio",
+     "i": 37.1,
+     "f": 37.5
+    },
+    {
+     "w": "o",
+     "i": 37.5,
+     "f": 37.58
+    },
+    {
+     "w": "reconhecimento:",
+     "i": 37.58,
+     "f": 38.46
+    }
+   ]
+  },
+  {
+   "ini": 38.5,
+   "fim": 39.62,
+   "palavras": [
+    {
+     "w": "Ponto",
+     "i": 38.62,
+     "f": 38.84
+    },
+    {
+     "w": "de",
+     "i": 38.84,
+     "f": 39.04
+    },
+    {
+     "w": "Cultura,",
+     "i": 39.04,
+     "f": 39.48
+    }
+   ]
+  },
+  {
+   "ini": 39.62,
+   "fim": 41.26,
+   "palavras": [
+    {
+     "w": "pelo",
+     "i": 39.74,
+     "f": 39.88
+    },
+    {
+     "w": "Ministério",
+     "i": 39.88,
+     "f": 40.48
+    },
+    {
+     "w": "da",
+     "i": 40.48,
+     "f": 40.62
+    },
+    {
+     "w": "Cultura,",
+     "i": 40.62,
+     "f": 41.14
+    }
+   ]
+  },
+  {
+   "ini": 41.26,
+   "fim": 43.46,
+   "palavras": [
+    {
+     "w": "na",
+     "i": 41.38,
+     "f": 41.48
+    },
+    {
+     "w": "Política",
+     "i": 41.48,
+     "f": 41.92
+    },
+    {
+     "w": "Nacional",
+     "i": 41.92,
+     "f": 42.32
+    },
+    {
+     "w": "Cultura",
+     "i": 42.32,
+     "f": 42.9
+    },
+    {
+     "w": "Viva.",
+     "i": 42.9,
+     "f": 43.28
+    }
+   ]
+  },
+  {
+   "ini": 43.46,
+   "fim": 45.54,
+   "palavras": [
+    {
+     "w": "Hoje,",
+     "i": 43.58,
+     "f": 43.9
+    },
+    {
+     "w": "são",
+     "i": 44.1,
+     "f": 44.38
+    },
+    {
+     "w": "12",
+     "i": 44.38,
+     "f": 44.68
+    },
+    {
+     "w": "artistas.",
+     "i": 44.68,
+     "f": 45.36
+    }
+   ]
+  },
+  {
+   "ini": 45.54,
+   "fim": 48.26,
+   "palavras": [
+    {
+     "w": "Audiovisual,",
+     "i": 45.66,
+     "f": 46.3
+    },
+    {
+     "w": "música,",
+     "i": 46.74,
+     "f": 47.16
+    },
+    {
+     "w": "teatro,",
+     "i": 47.6,
+     "f": 48.02
+    }
+   ]
+  },
+  {
+   "ini": 48.26,
+   "fim": 49.6,
+   "palavras": [
+    {
+     "w": "circo,",
+     "i": 48.38,
+     "f": 48.76
+    },
+    {
+     "w": "literatura.",
+     "i": 49.08,
+     "f": 49.72
+    }
+   ]
+  },
+  {
+   "ini": 49.6,
+   "fim": 50.94,
+   "palavras": [
+    {
+     "w": "E",
+     "i": 49.72,
+     "f": 50.14
+    },
+    {
+     "w": "sete",
+     "i": 50.14,
+     "f": 50.54
+    },
+    {
+     "w": "filmes,",
+     "i": 50.54,
+     "f": 50.96
+    }
+   ]
+  },
+  {
+   "ini": 50.94,
+   "fim": 52.65,
+   "palavras": [
+    {
+     "w": "todos",
+     "i": 51.06,
+     "f": 51.26
+    },
+    {
+     "w": "feitos",
+     "i": 51.26,
+     "f": 51.76
+    },
+    {
+     "w": "aqui.",
+     "i": 51.76,
+     "f": 52.1
+    }
+   ]
+  },
+  {
+   "ini": 61.0,
+   "fim": 62.04,
+   "palavras": [
+    {
+     "w": "Histórias",
+     "i": 61.12,
+     "f": 61.5
+    },
+    {
+     "w": "de",
+     "i": 61.5,
+     "f": 61.68
+    },
+    {
+     "w": "luto,",
+     "i": 61.68,
+     "f": 61.98
+    }
+   ]
+  },
+  {
+   "ini": 62.04,
+   "fim": 63.44,
+   "palavras": [
+    {
+     "w": "de",
+     "i": 62.16,
+     "f": 62.24
+    },
+    {
+     "w": "violência",
+     "i": 62.24,
+     "f": 62.64
+    },
+    {
+     "w": "contra",
+     "i": 62.64,
+     "f": 62.86
+    },
+    {
+     "w": "a",
+     "i": 62.86,
+     "f": 62.91
+    },
+    {
+     "w": "mulher,",
+     "i": 62.86,
+     "f": 63.22
+    }
+   ]
+  },
+  {
+   "ini": 63.44,
+   "fim": 65.34,
+   "palavras": [
+    {
+     "w": "de",
+     "i": 63.56,
+     "f": 63.76
+    },
+    {
+     "w": "fé,",
+     "i": 63.76,
+     "f": 64.04
+    },
+    {
+     "w": "de",
+     "i": 64.48,
+     "f": 64.56
+    },
+    {
+     "w": "música.",
+     "i": 64.56,
+     "f": 65.06
+    }
+   ]
+  },
+  {
+   "ini": 65.34,
+   "fim": 66.38,
+   "palavras": [
+    {
+     "w": "Temas",
+     "i": 65.46,
+     "f": 65.62
+    },
+    {
+     "w": "pouco",
+     "i": 65.62,
+     "f": 65.86
+    },
+    {
+     "w": "explorados",
+     "i": 65.86,
+     "f": 66.5
+    }
+   ]
+  },
+  {
+   "ini": 66.38,
+   "fim": 68.22,
+   "palavras": [
+    {
+     "w": "no",
+     "i": 66.5,
+     "f": 66.76
+    },
+    {
+     "w": "cinema",
+     "i": 66.76,
+     "f": 67.06
+    },
+    {
+     "w": "feito",
+     "i": 67.06,
+     "f": 67.38
+    },
+    {
+     "w": "em",
+     "i": 67.38,
+     "f": 67.58
+    },
+    {
+     "w": "Rondônia.",
+     "i": 67.58,
+     "f": 68.02
+    }
+   ]
+  },
+  {
+   "ini": 68.22,
+   "fim": 70.3,
+   "palavras": [
+    {
+     "w": "Devoção",
+     "i": 68.34,
+     "f": 68.76
+    },
+    {
+     "w": "e",
+     "i": 68.76,
+     "f": 68.92
+    },
+    {
+     "w": "Folia",
+     "i": 68.92,
+     "f": 69.18
+    },
+    {
+     "w": "de",
+     "i": 69.18,
+     "f": 69.36
+    },
+    {
+     "w": "Reis",
+     "i": 69.36,
+     "f": 69.66
+    },
+    {
+     "w": "foi",
+     "i": 69.66,
+     "f": 69.82
+    },
+    {
+     "w": "além.",
+     "i": 69.82,
+     "f": 70.12
+    }
+   ]
+  },
+  {
+   "ini": 70.3,
+   "fim": 71.74,
+   "palavras": [
+    {
+     "w": "Passou",
+     "i": 70.42,
+     "f": 70.66
+    },
+    {
+     "w": "pela",
+     "i": 70.66,
+     "f": 70.84
+    },
+    {
+     "w": "Mostra",
+     "i": 70.84,
+     "f": 71.12
+    },
+    {
+     "w": "Internacional",
+     "i": 71.12,
+     "f": 71.86
+    }
+   ]
+  },
+  {
+   "ini": 71.74,
+   "fim": 72.72,
+   "palavras": [
+    {
+     "w": "de",
+     "i": 71.86,
+     "f": 72.16
+    },
+    {
+     "w": "Cinema",
+     "i": 72.16,
+     "f": 72.42
+    },
+    {
+     "w": "Negro",
+     "i": 72.42,
+     "f": 72.84
+    }
+   ]
+  },
+  {
+   "ini": 72.72,
+   "fim": 74.62,
+   "palavras": [
+    {
+     "w": "e",
+     "i": 72.84,
+     "f": 73.12
+    },
+    {
+     "w": "pela",
+     "i": 73.12,
+     "f": 73.38
+    },
+    {
+     "w": "Mostra",
+     "i": 73.38,
+     "f": 73.8
+    },
+    {
+     "w": "Sesc",
+     "i": 73.8,
+     "f": 74.58
+    }
+   ]
+  },
+  {
+   "ini": 74.62,
+   "fim": 75.84,
+   "palavras": [
+    {
+     "w": "Amazônia",
+     "i": 74.74,
+     "f": 75.08
+    },
+    {
+     "w": "das",
+     "i": 75.08,
+     "f": 75.36
+    },
+    {
+     "w": "Artes,",
+     "i": 75.36,
+     "f": 75.84
+    }
+   ]
+  },
+  {
+   "ini": 75.84,
+   "fim": 77.42,
+   "palavras": [
+    {
+     "w": "em",
+     "i": 75.96,
+     "f": 76.1
+    },
+    {
+     "w": "dez",
+     "i": 76.1,
+     "f": 76.34
+    },
+    {
+     "w": "estados",
+     "i": 76.34,
+     "f": 76.78
+    },
+    {
+     "w": "brasileiros.",
+     "i": 76.78,
+     "f": 77.54
+    }
+   ]
+  },
+  {
+   "ini": 77.42,
+   "fim": 78.5,
+   "palavras": [
+    {
+     "w": "Mas",
+     "i": 77.54,
+     "f": 77.9
+    },
+    {
+     "w": "o",
+     "i": 77.9,
+     "f": 78.02
+    },
+    {
+     "w": "Respirartes",
+     "i": 78.02,
+     "f": 78.62
+    }
+   ]
+  },
+  {
+   "ini": 78.5,
+   "fim": 79.68,
+   "palavras": [
+    {
+     "w": "não",
+     "i": 78.62,
+     "f": 78.7
+    },
+    {
+     "w": "cabe",
+     "i": 78.7,
+     "f": 78.92
+    },
+    {
+     "w": "só",
+     "i": 78.92,
+     "f": 79.1
+    },
+    {
+     "w": "na",
+     "i": 79.1,
+     "f": 79.2
+    },
+    {
+     "w": "tela.",
+     "i": 79.2,
+     "f": 79.6
+    }
+   ]
+  },
+  {
+   "ini": 79.68,
+   "fim": 81.22,
+   "palavras": [
+    {
+     "w": "Já",
+     "i": 79.8,
+     "f": 79.94
+    },
+    {
+     "w": "colocou",
+     "i": 79.94,
+     "f": 80.32
+    },
+    {
+     "w": "som,",
+     "i": 80.32,
+     "f": 80.66
+    },
+    {
+     "w": "livros",
+     "i": 81.04,
+     "f": 81.34
+    }
+   ]
+  },
+  {
+   "ini": 81.22,
+   "fim": 82.9,
+   "palavras": [
+    {
+     "w": "e",
+     "i": 81.34,
+     "f": 81.46
+    },
+    {
+     "w": "equipamentos",
+     "i": 81.46,
+     "f": 82.0
+    },
+    {
+     "w": "de",
+     "i": 82.0,
+     "f": 82.18
+    },
+    {
+     "w": "cinema",
+     "i": 82.18,
+     "f": 82.48
+    },
+    {
+     "w": "no",
+     "i": 82.48,
+     "f": 82.68
+    },
+    {
+     "w": "carro",
+     "i": 82.68,
+     "f": 83.02
+    }
+   ]
+  },
+  {
+   "ini": 82.9,
+   "fim": 84.02,
+   "palavras": [
+    {
+     "w": "e",
+     "i": 83.02,
+     "f": 83.36
+    },
+    {
+     "w": "levou",
+     "i": 83.36,
+     "f": 83.66
+    },
+    {
+     "w": "tudo",
+     "i": 83.66,
+     "f": 83.84
+    },
+    {
+     "w": "até",
+     "i": 83.84,
+     "f": 84.14
+    }
+   ]
+  },
+  {
+   "ini": 84.02,
+   "fim": 85.74,
+   "palavras": [
+    {
+     "w": "a",
+     "i": 84.14,
+     "f": 84.22
+    },
+    {
+     "w": "Escola",
+     "i": 84.22,
+     "f": 84.52
+    },
+    {
+     "w": "Jorge",
+     "i": 84.52,
+     "f": 84.94
+    },
+    {
+     "w": "Teixeira,",
+     "i": 84.94,
+     "f": 85.54
+    }
+   ]
+  },
+  {
+   "ini": 85.74,
+   "fim": 87.66,
+   "palavras": [
+    {
+     "w": "no",
+     "i": 85.86,
+     "f": 86.06
+    },
+    {
+     "w": "distrito",
+     "i": 86.06,
+     "f": 86.48
+    },
+    {
+     "w": "de",
+     "i": 86.48,
+     "f": 86.7
+    },
+    {
+     "w": "Nova",
+     "i": 86.7,
+     "f": 86.88
+    },
+    {
+     "w": "Londrina.",
+     "i": 86.88,
+     "f": 87.42
+    }
+   ]
+  },
+  {
+   "ini": 87.66,
+   "fim": 89.36,
+   "palavras": [
+    {
+     "w": "E",
+     "i": 87.78,
+     "f": 87.9
+    },
+    {
+     "w": "segue",
+     "i": 87.9,
+     "f": 88.12
+    },
+    {
+     "w": "levando",
+     "i": 88.12,
+     "f": 88.52
+    },
+    {
+     "w": "música,",
+     "i": 88.52,
+     "f": 88.98
+    }
+   ]
+  },
+  {
+   "ini": 89.36,
+   "fim": 91.28,
+   "palavras": [
+    {
+     "w": "circo,",
+     "i": 89.48,
+     "f": 90.0
+    },
+    {
+     "w": "teatro",
+     "i": 90.32,
+     "f": 90.64
+    },
+    {
+     "w": "e",
+     "i": 90.64,
+     "f": 90.76
+    },
+    {
+     "w": "literatura",
+     "i": 90.76,
+     "f": 91.4
+    }
+   ]
+  },
+  {
+   "ini": 91.28,
+   "fim": 93.62,
+   "palavras": [
+    {
+     "w": "para",
+     "i": 91.4,
+     "f": 91.86
+    },
+    {
+     "w": "escolas,",
+     "i": 91.86,
+     "f": 92.36
+    },
+    {
+     "w": "aldeias,",
+     "i": 92.78,
+     "f": 93.36
+    }
+   ]
+  },
+  {
+   "ini": 93.62,
+   "fim": 95.52,
+   "palavras": [
+    {
+     "w": "feiras",
+     "i": 93.74,
+     "f": 94.14
+    },
+    {
+     "w": "e",
+     "i": 94.14,
+     "f": 94.5
+    },
+    {
+     "w": "fóruns",
+     "i": 94.5,
+     "f": 94.88
+    },
+    {
+     "w": "de",
+     "i": 94.88,
+     "f": 95.0
+    },
+    {
+     "w": "cultura.",
+     "i": 95.0,
+     "f": 95.32
+    }
+   ]
+  },
+  {
+   "ini": 95.52,
+   "fim": 96.76,
+   "palavras": [
+    {
+     "w": "E",
+     "i": 95.64,
+     "f": 95.78
+    },
+    {
+     "w": "vem",
+     "i": 95.78,
+     "f": 95.9
+    },
+    {
+     "w": "mais",
+     "i": 95.9,
+     "f": 96.14
+    },
+    {
+     "w": "por",
+     "i": 96.14,
+     "f": 96.34
+    },
+    {
+     "w": "aí:",
+     "i": 96.34,
+     "f": 96.58
+    }
+   ]
+  },
+  {
+   "ini": 96.76,
+   "fim": 98.08,
+   "palavras": [
+    {
+     "w": "a",
+     "i": 96.88,
+     "f": 96.92
+    },
+    {
+     "w": "volta",
+     "i": 96.92,
+     "f": 97.16
+    },
+    {
+     "w": "do",
+     "i": 97.16,
+     "f": 97.36
+    },
+    {
+     "w": "Cineclube,",
+     "i": 97.36,
+     "f": 97.96
+    }
+   ]
+  },
+  {
+   "ini": 98.08,
+   "fim": 100.24,
+   "palavras": [
+    {
+     "w": "agora",
+     "i": 98.2,
+     "f": 98.44
+    },
+    {
+     "w": "como",
+     "i": 98.44,
+     "f": 98.76
+    },
+    {
+     "w": "Cineclube",
+     "i": 98.76,
+     "f": 99.42
+    },
+    {
+     "w": "Respirartes,",
+     "i": 99.52,
+     "f": 100.3
+    }
+   ]
+  },
+  {
+   "ini": 100.24,
+   "fim": 101.72,
+   "palavras": [
+    {
+     "w": "em",
+     "i": 100.36,
+     "f": 100.5
+    },
+    {
+     "w": "parceria",
+     "i": 100.5,
+     "f": 101.04
+    },
+    {
+     "w": "com",
+     "i": 101.04,
+     "f": 101.2
+    },
+    {
+     "w": "a",
+     "i": 101.2,
+     "f": 101.28
+    },
+    {
+     "w": "UNIR.",
+     "i": 101.28,
+     "f": 101.6
+    }
+   ]
+  },
+  {
+   "ini": 101.72,
+   "fim": 103.84,
+   "palavras": [
+    {
+     "w": "A",
+     "i": 101.84,
+     "f": 101.86
+    },
+    {
+     "w": "Mostra",
+     "i": 101.86,
+     "f": 102.12
+    },
+    {
+     "w": "Curta",
+     "i": 102.12,
+     "f": 102.7
+    },
+    {
+     "w": "Rio",
+     "i": 102.78,
+     "f": 102.96
+    },
+    {
+     "w": "Ji-Paraná,",
+     "i": 103.1,
+     "f": 103.64
+    }
+   ]
+  },
+  {
+   "ini": 103.84,
+   "fim": 104.94,
+   "palavras": [
+    {
+     "w": "com",
+     "i": 103.96,
+     "f": 104.0
+    },
+    {
+     "w": "filmes",
+     "i": 104.0,
+     "f": 104.42
+    },
+    {
+     "w": "da",
+     "i": 104.42,
+     "f": 104.56
+    },
+    {
+     "w": "cidade.",
+     "i": 104.56,
+     "f": 105.06
+    }
+   ]
+  },
+  {
+   "ini": 104.94,
+   "fim": 106.6,
+   "palavras": [
+    {
+     "w": "E",
+     "i": 105.06,
+     "f": 105.36
+    },
+    {
+     "w": "a",
+     "i": 105.36,
+     "f": 105.48
+    },
+    {
+     "w": "mostra",
+     "i": 105.48,
+     "f": 105.7
+    },
+    {
+     "w": "fotográfica",
+     "i": 105.7,
+     "f": 106.72
+    }
+   ]
+  },
+  {
+   "ini": 106.6,
+   "fim": 107.88,
+   "palavras": [
+    {
+     "w": "Do",
+     "i": 106.72,
+     "f": 106.92
+    },
+    {
+     "w": "Oriente",
+     "i": 106.92,
+     "f": 107.34
+    },
+    {
+     "w": "a",
+     "i": 107.34,
+     "f": 107.44
+    },
+    {
+     "w": "Belém,",
+     "i": 107.44,
+     "f": 107.88
+    }
+   ]
+  },
+  {
+   "ini": 107.88,
+   "fim": 109.7,
+   "palavras": [
+    {
+     "w": "com",
+     "i": 108.0,
+     "f": 108.08
+    },
+    {
+     "w": "a",
+     "i": 108.08,
+     "f": 108.12
+    },
+    {
+     "w": "Companhia",
+     "i": 108.12,
+     "f": 108.68
+    },
+    {
+     "w": "de",
+     "i": 108.68,
+     "f": 108.76
+    },
+    {
+     "w": "Santos",
+     "i": 108.76,
+     "f": 109.0
+    },
+    {
+     "w": "Reis.",
+     "i": 109.0,
+     "f": 109.56
+    }
+   ]
+  },
+  {
+   "ini": 109.7,
+   "fim": 111.3,
+   "palavras": [
+    {
+     "w": "Coletivo",
+     "i": 109.82,
+     "f": 110.38
+    },
+    {
+     "w": "Respirartes,",
+     "i": 110.38,
+     "f": 111.28
+    }
+   ]
+  },
+  {
+   "ini": 111.3,
+   "fim": 113.16,
+   "palavras": [
+    {
+     "w": "Ponto",
+     "i": 111.42,
+     "f": 111.64
+    },
+    {
+     "w": "de",
+     "i": 111.64,
+     "f": 111.88
+    },
+    {
+     "w": "Cultura",
+     "i": 111.88,
+     "f": 112.26
+    },
+    {
+     "w": "de",
+     "i": 112.26,
+     "f": 112.52
+    },
+    {
+     "w": "Ji-Paraná,",
+     "i": 112.52,
+     "f": 113.04
+    }
+   ]
+  },
+  {
+   "ini": 113.16,
+   "fim": 117.15,
+   "palavras": [
+    {
+     "w": "porque",
+     "i": 113.28,
+     "f": 113.72
+    },
+    {
+     "w": "eu",
+     "i": 113.72,
+     "f": 114.14
+    },
+    {
+     "w": "preciso",
+     "i": 114.14,
+     "f": 114.8
+    },
+    {
+     "w": "respirar",
+     "i": 114.8,
+     "f": 115.92
+    },
+    {
+     "w": "arte.",
+     "i": 115.92,
+     "f": 116.6
+    }
+   ]
+  }
+ ]
+}

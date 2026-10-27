@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=DM+Mono:wght@400;500&display=block">
+<style>
+  :root {
+    --papel:#FBF8F2; --papel-2:#F1ECE2; --tinta:#1C1A17; --tinta-2:#4A4640;
+    --laranja:#F69728; --vermelho:#BF3423; --coral:#F56631; --petroleo:#0D6370; --agua:#92C2C0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+  body { font-family: "Newsreader", serif; color: var(--tinta); -webkit-font-smoothing: antialiased; }
+  #tela { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--papel); }
+  #mundo { position: absolute; inset: 0; z-index: 0; isolation: isolate; }
+  #poeira, #leak, #pelicula, #cortina, #flash, #vinheta, #grao, #leg { z-index: 5; }
+  .cena { position: absolute; inset: 0; overflow: hidden; display: none; }
+  .cam { position: absolute; inset: 0; transform-origin: 50% 50%; background: inherit; }
+  .abs { position: absolute; }
+  .disp { font-family: "Anybody", sans-serif; font-weight: 800; text-transform: uppercase; line-height: .9; white-space: nowrap; }
+  .mono { font-family: "DM Mono", monospace; text-transform: uppercase; letter-spacing: .26em; white-space: nowrap; }
+  .serif { font-family: "Newsreader", serif; }
+  .ita { font-style: italic; }
+  .lin { display: block; overflow: hidden; padding: .16em 0 .1em; margin: -.16em 0 -.1em; }
+  .lin > span { display: inline-block; will-change: transform; }
+  .letra { display: inline-block; will-change: transform; }
+  .fundo { position: absolute; inset: -40px; background-size: cover; background-position: center; }
+  svg.tr { position: absolute; overflow: visible; }
+  svg.tr path, svg.tr circle, svg.tr ellipse, svg.tr polyline { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* odômetro */
+  .odo { display: inline-flex; line-height: 1; }
+  .odo .col { display: inline-block; height: 1em; overflow: hidden; position: relative; }
+  .odo .col > div { display: flex; flex-direction: column; }
+  .odo .col > div > span { display: block; height: 1em; line-height: 1em; text-align: center; }
+
+  /* cenas */
+  #c-abertura, #c-pessoas, #c-fecho { background: var(--papel); }
+  #c-origem, #c-filmes, #c-temas, #c-acoes, .filme { background: var(--tinta); }
+  #c-2014, #c-escola { background: var(--laranja); }
+  #c-2025, #c-futuro { background: var(--petroleo); }
+  #c-2022, #c-mostras { background: #141210; }
+
+  .chip { position: absolute; left: 0; padding: .06em .28em .02em; font-family: "Anybody", sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1.12; white-space: nowrap; }
+
+  /* overlays */
+  #poeira, #grao { position: absolute; inset: 0; pointer-events: none; }
+  #grao { mix-blend-mode: overlay; opacity: .12; }
+  #vinheta { position: absolute; inset: 0; pointer-events: none; }
+  #leak { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: 0; }
+  #flash { position: absolute; inset: 0; background: #FFF9EE; opacity: 0; pointer-events: none; }
+  #cortina { position: absolute; inset: 0; pointer-events: none; display: none; }
+  #cortina > div { position: absolute; top: 0; bottom: 0; width: 100%; }
+  #pelicula { position: absolute; inset: 0; pointer-events: none; display: none; }
+  #pelicula .barra { position: absolute; left: 0; right: 0; height: 118px; background: #0E0D0C; overflow: hidden; }
+  #pelicula .furos { position: absolute; top: 46px; left: 0; height: 26px; width: 4000px;
+    background: linear-gradient(90deg, rgba(251,248,242,.86) 0 34px, transparent 34px) 0 0 / 66px 26px repeat-x; border-radius: 4px; }
+  #contador { position: absolute; right: 64px; bottom: 16px; color: var(--laranja); font-size: 17px; }
+
+  #leg { position: absolute; left: 0; right: 0; bottom: 58px; display: flex; justify-content: center; pointer-events: none; }
+  #leg .pill { background: rgba(24,22,20,.86); border-radius: 8px; padding: 9px 22px 8px; font-family: "Anybody", sans-serif; font-weight: 650;
+    font-variation-settings: "wdth" 96; font-size: 30px; line-height: 1.25; color: rgba(251,248,242,.5); white-space: nowrap; box-shadow: 0 6px 22px rgba(0,0,0,.18); }
+  #leg .pill span.dita { color: #FBF8F2; }
+  #leg .pill span.agora { color: var(--laranja); }
+</style>
+</head>
+<body>
+<div id="tela">
+<div id="mundo">
+
+  <!-- ═════════ ABERTURA ═════════ -->
+  <section class="cena" id="c-abertura"><div class="cam">
+    <div class="abs mono" id="ab-local" style="top:62px;left:0;right:0;text-align:center;font-size:21px;color:var(--tinta-2)"></div>
+    <svg class="tr" id="ab-aneis" width="640" height="640" style="left:640px;top:-70px" viewBox="0 0 640 640">
+      <circle cx="320" cy="320" r="150" stroke="#BF3423" stroke-width="1.6" opacity=".45"/>
+      <circle cx="320" cy="320" r="190" stroke="#F69728" stroke-width="1.4" opacity=".35"/>
+      <circle cx="320" cy="320" r="236" stroke="#BF3423" stroke-width="1.2" opacity=".2"/>
+    </svg>
+    <img class="abs" id="ab-logo" src="img/logo.jpg" style="left:845px;top:135px;width:230px;height:230px;mix-blend-mode:multiply">
+    <div class="abs disp marca" id="ab-marca" style="left:0;right:0;top:420px;text-align:center"></div>
+    <div class="abs serif ita" id="ab-lema" style="left:0;right:0;top:660px;text-align:center;font-size:54px;color:var(--vermelho)"></div>
+    <svg class="tr" id="ab-elipse" width="1920" height="1080" style="left:0;top:0" viewBox="0 0 1920 1080">
+      <path d="M 640 700 C 700 640, 1240 640, 1290 690 C 1330 735, 1180 770, 960 772 C 760 774, 610 760, 625 720 C 632 700, 680 684, 720 678" stroke="#E2622F" stroke-width="4"/>
+    </svg>
+  </div></section>
+
+  <!-- ═════════ ORIGEM ═════════ -->
+  <section class="cena" id="c-origem"><div class="cam">
+    <div class="abs mono" id="or-rot" style="left:132px;top:118px;font-size:20px;color:var(--laranja)">Antes do nome</div>
+    <div class="abs disp" id="or-tit" style="left:124px;top:150px;font-size:178px;color:var(--papel);font-variation-settings:'wdth' 82"><span class="lin"><span>Um hábito</span></span></div>
+    <div class="abs serif ita" id="or-casa-txt" style="left:132px;top:392px;font-size:60px;color:rgba(251,248,242,.88)"><span class="lin"><span>Gente se reunindo numa casa.</span></span></div>
+    <div class="abs" style="left:126px;top:540px;width:1100px;height:360px">
+      <div class="chip" id="or-c1" style="top:0;font-size:64px;background:var(--laranja);color:var(--tinta);font-variation-settings:'wdth' 84">Para tocar violão</div>
+      <div class="chip" id="or-c2" style="top:108px;font-size:64px;background:var(--agua);color:var(--tinta);font-variation-settings:'wdth' 84">Para discutir política cultural</div>
+      <div class="chip" id="or-c3" style="top:216px;font-size:64px;background:var(--vermelho);color:var(--papel);font-variation-settings:'wdth' 84">Para escrever projetos</div>
+    </div>
+    <svg class="tr" id="or-casa" width="460" height="460" style="left:1330px;top:330px" viewBox="0 0 460 460">
+      <path d="M 40 210 L 230 40 L 420 210" stroke="#F69728" stroke-width="12"/>
+      <path d="M 90 170 L 90 420 L 370 420 L 370 170" stroke="#F69728" stroke-width="12"/>
+      <path d="M 190 420 L 190 320 L 270 320 L 270 420" stroke="#F69728" stroke-width="12"/>
+      <circle id="or-janela" cx="230" cy="245" r="26" fill="#F69728" stroke="none" style="fill:#F69728"/>
+    </svg>
+  </div></section>
+
+  <!-- ═════════ 2014 ═════════ -->
+  <section class="cena" id="c-2014"><div class="cam">
+    <div class="abs disp" id="a14-ano" style="left:92px;top:40px;font-size:440px;color:var(--tinta);font-variation-settings:'wdth' 118"></div>
+    <div class="abs serif" id="a14-l1" style="left:100px;top:575px;font-size:80px;color:var(--tinta)"><span class="lin"><span>Grupo <i>Parafernália</i> de Teatro</span></span></div>
+    <div class="abs serif" id="a14-l2" style="left:100px;top:680px;font-size:80px;color:var(--tinta)"><span class="lin"><span>Cineclube <i>Ano 41</i></span></span></div>
+    <div class="abs mono" id="a14-nota" style="left:104px;top:820px;font-size:19px;color:var(--tinta-2)"></div>
+    <svg class="tr" id="a14-linha" width="1720" height="20" style="left:100px;top:790px" viewBox="0 0 1720 20"><path d="M 0 10 L 1100 10" stroke="#1C1A17" stroke-width="2"/></svg>
+  </div></section>
+
+  <!-- ═════════ 2022 ═════════ -->
+  <section class="cena" id="c-2022"><div class="cam">
+    <div class="fundo" id="a22-fundo" style="background-image:url(img/flores.jpg);filter:grayscale(1) brightness(.62) contrast(1.08)"></div>
+    <div class="abs" style="inset:0;background:linear-gradient(90deg, rgba(18,16,14,.88) 0%, rgba(18,16,14,.55) 42%, rgba(18,16,14,.05) 72%), linear-gradient(0deg, rgba(18,16,14,.6) 0%, transparent 40%)"></div>
+    <div class="abs disp" id="a22-ano" style="left:92px;top:70px;font-size:250px;color:var(--laranja);font-variation-settings:'wdth' 118"></div>
+    <div class="abs serif" id="a22-verso" style="left:100px;top:360px;font-size:60px;line-height:1.28;color:var(--papel);width:900px"></div>
+    <div class="abs mono" id="a22-rot" style="left:104px;top:735px;font-size:19px;color:var(--laranja)">Curta-metragem · 2022</div>
+    <div class="abs disp marca" id="a22-flores" style="left:92px;top:770px;font-size:230px;color:var(--papel);font-variation-settings:'wdth' 80"></div>
+  </div></section>
+
+  <!-- ═════════ 2025 ═════════ -->
+  <section class="cena" id="c-2025"><div class="cam">
+    <div class="abs" style="inset:0;background:radial-gradient(ellipse at 70% 30%, rgba(146,194,192,.22), transparent 60%)"></div>
+    <div class="abs disp" id="a25-ano" style="left:92px;top:70px;font-size:250px;color:var(--laranja);font-variation-settings:'wdth' 118"></div>
+    <div class="abs mono" id="a25-rot" style="left:104px;top:352px;font-size:20px;color:rgba(251,248,242,.72)"></div>
+    <div class="abs" id="a25-b1" style="left:84px;top:470px;width:740px;height:84px;background:var(--vermelho);transform-origin:0 50%"></div>
+    <div class="abs" id="a25-b2" style="left:84px;top:650px;width:650px;height:84px;background:var(--vermelho);transform-origin:0 50%"></div>
+    <div class="abs disp" id="a25-t1" style="left:96px;top:392px;font-size:180px;color:var(--papel);font-variation-settings:'wdth' 80"><span class="lin"><span>Ponto de</span></span></div>
+    <div class="abs disp" id="a25-t2" style="left:96px;top:572px;font-size:180px;color:var(--papel);font-variation-settings:'wdth' 80"><span class="lin"><span>Cultura</span></span></div>
+    <div class="abs mono" id="a25-linha" style="left:104px;top:830px;font-size:19px;color:rgba(251,248,242,.85)"></div>
+    <svg class="tr" id="a25-check" width="400" height="400" style="left:1360px;top:240px" viewBox="0 0 400 400">
+      <circle cx="200" cy="200" r="168" stroke="#F69728" stroke-width="8" transform="rotate(-90 200 200)"/>
+      <path d="M 120 205 L 178 262 L 290 140" stroke="#F69728" stroke-width="16"/>
+    </svg>
+  </div></section>
+
+  <!-- ═════════ PESSOAS ═════════ -->
+  <section class="cena" id="c-pessoas"><div class="cam">
+    <div class="abs disp" id="pe-num" style="left:84px;top:40px;font-size:440px;color:var(--vermelho);font-variation-settings:'wdth' 118"></div>
+    <div class="abs disp" id="pe-art" style="left:820px;top:236px;font-size:200px;color:var(--tinta);font-variation-settings:'wdth' 112"><span class="lin"><span>Artistas</span></span></div>
+    <div class="abs" id="pe-banda" style="left:0;top:600px;width:1920px;height:300px">
+      <div class="abs disp pb" style="left:0;width:384px;height:300px;background:var(--petroleo);color:var(--papel)"><span class="abs" style="left:26px;bottom:26px;font-size:50px;font-variation-settings:'wdth' 84">Audiovisual</span></div>
+      <div class="abs disp pb" style="left:384px;width:384px;height:300px;background:var(--laranja);color:var(--tinta)"><span class="abs" style="left:26px;bottom:26px;font-size:50px;font-variation-settings:'wdth' 84">Música</span></div>
+      <div class="abs disp pb" style="left:768px;width:384px;height:300px;background:var(--agua);color:var(--tinta)"><span class="abs" style="left:26px;bottom:26px;font-size:50px;font-variation-settings:'wdth' 84">Teatro</span></div>
+      <div class="abs disp pb" style="left:1152px;width:384px;height:300px;background:var(--vermelho);color:var(--papel)"><span class="abs" style="left:26px;bottom:26px;font-size:50px;font-variation-settings:'wdth' 84">Circo</span></div>
+      <div class="abs disp pb" style="left:1536px;width:384px;height:300px;background:var(--tinta);color:var(--laranja)"><span class="abs" style="left:26px;bottom:26px;font-size:50px;font-variation-settings:'wdth' 84">Literatura</span></div>
+    </div>
+  </div></section>
+
+  <!-- ═════════ FILMES ═════════ -->
+  <section class="cena" id="c-filmes"><div class="cam">
+    <div class="abs disp" id="fi-num" style="left:96px;top:70px;font-size:360px;color:var(--laranja);font-variation-settings:'wdth' 118"></div>
+    <div class="abs disp" id="fi-tit" style="left:420px;top:120px;font-size:180px;color:var(--papel);font-variation-settings:'wdth' 110"><span class="lin"><span>Filmes</span></span></div>
+    <div class="abs serif ita" id="fi-sub" style="left:430px;top:318px;font-size:60px;color:rgba(251,248,242,.85)"><span class="lin"><span>todos feitos aqui</span></span></div>
+    <div class="abs" id="fi-tira" style="left:0;top:540px;width:1920px;height:340px;background:#0B0A09">
+      <div class="abs" style="left:0;right:0;top:14px;height:22px;background:linear-gradient(90deg, rgba(251,248,242,.7) 0 30px, transparent 30px) 0 0/58px 22px repeat-x"></div>
+      <div class="abs" style="left:0;right:0;bottom:14px;height:22px;background:linear-gradient(90deg, rgba(251,248,242,.7) 0 30px, transparent 30px) 0 0/58px 22px repeat-x"></div>
+      <div class="abs" id="fi-trilho" style="left:0;top:52px;height:236px;display:flex;gap:18px"></div>
+    </div>
+  </div></section>
+
+  <!-- ═════════ MONTAGEM: um bloco por filme ═════════ -->
+  <section class="cena filme" id="c-f-flores"><div class="cam"><div class="fundo" style="background-image:url(img/flores.jpg);filter:grayscale(1) contrast(1.05) brightness(.9)"></div><div class="sombra"></div><div class="abs mono cred">Curta-metragem · Carlos Reis</div><div class="abs disp tit">Flores</div></div></section>
+  <section class="cena filme" id="c-f-lidia"><div class="cam"><div class="fundo" style="background-image:url(img/lidia.jpg);filter:grayscale(1) contrast(1.05)"></div><div class="sombra"></div><div class="abs mono cred">Curta-metragem · Carlos Reis</div><div class="abs disp tit">Dona Lídia</div></div></section>
+  <section class="cena filme" id="c-f-fita"><div class="cam"><div class="fundo" style="background-image:url(img/fita.jpg)"></div><div class="sombra"></div><div class="abs mono cred">Curta-metragem · Carlos Reis</div><div class="abs disp tit">Fita</div></div></section>
+  <section class="cena filme" id="c-f-camadas"><div class="cam"><div class="fundo" style="background-image:url(img/camadas.jpg)"></div><div class="sombra"></div><div class="abs mono cred">Curta-metragem · Carlos Reis</div><div class="abs disp tit">Camadas</div></div></section>
+  <section class="cena filme" id="c-f-toto"><div class="cam"><div class="fundo" style="background-image:url(img/toto.jpg)"></div><div class="sombra"></div><div class="abs mono cred">Documentário · Carlos Reis</div><div class="abs disp tit">Deus, eu e o cachorro Totó</div></div></section>
+  <section class="cena filme" id="c-f-olhares"><div class="cam"><div class="fundo" style="background-image:url(img/olhares.jpg)"></div><div class="sombra"></div><div class="abs mono cred">Documentário musical · Dheymysson Bohre</div><div class="abs disp tit">Olhares</div></div></section>
+  <section class="cena filme" id="c-f-folia"><div class="cam"><div class="fundo" style="background-image:url(img/folia.jpg)"></div><div class="sombra"></div><div class="abs mono cred">Documentário · Carlos Reis</div><div class="abs disp tit">Devoção e Folia de Reis</div></div></section>
+
+  <!-- ═════════ TEMAS ═════════ -->
+  <section class="cena" id="c-temas"><div class="cam">
+    <div class="abs tp" style="left:0;top:0;width:480px;height:1080px"><div class="fundo" style="inset:0;background-image:url(img/lidia.jpg);background-position:30% center"></div><div class="abs disp tl" style="left:42px;top:470px;font-size:96px;color:var(--papel);font-variation-settings:'wdth' 80">Luto</div></div>
+    <div class="abs tp" style="left:480px;top:0;width:480px;height:1080px"><div class="fundo" style="inset:0;background-image:url(img/camadas.jpg);background-position:45% center"></div><div class="abs disp tl" style="left:42px;top:430px;font-size:76px;line-height:.95;color:var(--papel);font-variation-settings:'wdth' 80">Violência<br>contra a<br>mulher</div></div>
+    <div class="abs tp" style="left:960px;top:0;width:480px;height:1080px"><div class="fundo" style="inset:0;background-image:url(img/folia.jpg);background-position:40% center"></div><div class="abs disp tl" style="left:42px;top:470px;font-size:96px;color:var(--papel);font-variation-settings:'wdth' 80">Fé</div></div>
+    <div class="abs tp" style="left:1440px;top:0;width:480px;height:1080px"><div class="fundo" style="inset:0;background-image:url(img/olhares.jpg);background-position:70% center"></div><div class="abs disp tl" style="left:42px;top:470px;font-size:96px;color:var(--papel);font-variation-settings:'wdth' 80">Música</div></div>
+    <div class="abs" id="te-topo" style="left:0;right:0;top:0;height:260px;background:linear-gradient(180deg, rgba(14,13,12,.92), rgba(14,13,12,0))"></div>
+    <div class="abs serif ita" id="te-frase" style="left:64px;top:62px;font-size:56px;color:var(--papel)"><span class="lin"><span>Temas pouco explorados no cinema feito em Rondônia.</span></span></div>
+  </div></section>
+
+  <!-- ═════════ MOSTRAS ═════════ -->
+  <section class="cena" id="c-mostras"><div class="cam">
+    <div class="fundo" id="mo-fundo" style="background-image:url(img/folia.jpg);filter:brightness(.42) saturate(.85)"></div>
+    <div class="abs" style="inset:0;background:linear-gradient(90deg, rgba(14,13,12,.75), rgba(14,13,12,.15) 70%), linear-gradient(0deg, rgba(14,13,12,.7), transparent 55%)"></div>
+    <div class="abs mono" id="mo-rot" style="left:104px;top:110px;font-size:20px;color:var(--laranja)">Foi além</div>
+    <div class="abs disp" id="mo-t1" style="left:96px;top:150px;font-size:158px;color:var(--papel);font-variation-settings:'wdth' 80"><span class="lin"><span>Devoção e</span></span></div>
+    <div class="abs disp" id="mo-t2" style="left:96px;top:300px;font-size:158px;color:var(--papel);font-variation-settings:'wdth' 80"><span class="lin"><span>Folia de Reis</span></span></div>
+    <div class="abs moldura" id="mo-m1" style="left:100px;top:590px;width:820px;height:300px">
+      <svg class="tr" width="820" height="300" style="left:0;top:0" viewBox="0 0 820 300">
+        <path d="M 0 60 L 0 0 L 60 0 M 760 0 L 820 0 L 820 60 M 820 240 L 820 300 L 760 300 M 60 300 L 0 300 L 0 240" stroke="#F69728" stroke-width="5"/>
+        <path d="M 0 0 L 820 0 L 820 300 L 0 300 Z" stroke="rgba(246,151,40,.35)" stroke-width="1.5"/>
+      </svg>
+      <div class="abs mono mt" style="left:0;right:0;top:66px;text-align:center;font-size:19px;color:var(--laranja)">2022</div>
+      <div class="abs serif mt" style="left:0;right:0;top:104px;text-align:center;font-size:52px;line-height:1.15;color:var(--papel)">18ª Mostra Internacional<br>de Cinema Negro</div>
+    </div>
+    <div class="abs moldura" id="mo-m2" style="left:1000px;top:590px;width:820px;height:300px">
+      <svg class="tr" width="820" height="300" style="left:0;top:0" viewBox="0 0 820 300">
+        <path d="M 0 60 L 0 0 L 60 0 M 760 0 L 820 0 L 820 60 M 820 240 L 820 300 L 760 300 M 60 300 L 0 300 L 0 240" stroke="#F69728" stroke-width="5"/>
+        <path d="M 0 0 L 820 0 L 820 300 L 0 300 Z" stroke="rgba(246,151,40,.35)" stroke-width="1.5"/>
+      </svg>
+      <div class="abs mono mt" style="left:0;right:0;top:66px;text-align:center;font-size:19px;color:var(--laranja)">2025 · <span id="mo-est">10 estados</span></div>
+      <div class="abs serif mt" style="left:0;right:0;top:104px;text-align:center;font-size:52px;line-height:1.15;color:var(--papel)">Mostra Sesc Amazônia<br>das Artes</div>
+    </div>
+  </div></section>
+
+  <!-- ═════════ ESCOLA ═════════ -->
+  <section class="cena" id="c-escola"><div class="cam">
+    <div class="abs" id="es-sol" style="left:1230px;top:-390px;width:1000px;height:1000px;border-radius:50%;background:var(--vermelho)"></div>
+    <div class="abs disp" id="es-t0" style="left:96px;top:70px;font-size:196px;color:var(--tinta);font-variation-settings:'wdth' 118"><span class="lin"><span>Fora da tela</span></span></div>
+    <div class="abs disp" id="es-t1" style="left:96px;top:340px;font-size:172px;color:var(--papel);font-variation-settings:'wdth' 118"><span class="lin"><span>Cinema</span></span></div>
+    <div class="abs disp" id="es-t2" style="left:96px;top:510px;font-size:172px;color:var(--papel);font-variation-settings:'wdth' 118"><span class="lin"><span>na escola</span></span></div>
+    <svg class="tr" id="es-rota" width="1920" height="1080" style="left:0;top:0" viewBox="0 0 1920 1080">
+      <path id="es-cam" d="M 1180 900 C 1330 900, 1400 760, 1540 780 C 1660 800, 1700 700, 1800 690" stroke="#1C1A17" stroke-width="5" stroke-dasharray="2 14"/>
+      <path id="es-feito" d="M 1180 900 C 1330 900, 1400 760, 1540 780 C 1660 800, 1700 700, 1800 690" stroke="#1C1A17" stroke-width="6"/>
+      <circle cx="1180" cy="900" r="11" fill="#1C1A17" style="fill:#1C1A17"/>
+      <circle id="es-dest" cx="1800" cy="690" r="11" fill="#FBF8F2" stroke="#1C1A17" stroke-width="5" style="fill:#FBF8F2"/>
+    </svg>
+    <div class="abs mono" id="es-o" style="left:1110px;top:930px;font-size:17px;color:var(--tinta)">Ji-Paraná</div>
+    <div class="abs mono" id="es-d" style="left:1660px;top:632px;font-size:17px;color:var(--tinta)">Nova Londrina</div>
+    <svg class="tr" id="es-carro" width="96" height="60" style="left:0;top:0" viewBox="0 0 96 60">
+      <path d="M 8 40 L 8 28 L 22 26 L 34 12 L 66 12 L 78 26 L 88 28 L 88 40 Z" fill="#FBF8F2" stroke="#1C1A17" stroke-width="4" style="fill:#FBF8F2"/>
+      <path d="M 38 16 L 48 16 L 48 26 L 30 26 Z M 54 16 L 64 16 L 72 26 L 54 26 Z" fill="#1C1A17" stroke="none" style="fill:#1C1A17"/>
+      <circle cx="28" cy="42" r="8" fill="#1C1A17" stroke="none" style="fill:#1C1A17"/><circle cx="70" cy="42" r="8" fill="#1C1A17" stroke="none" style="fill:#1C1A17"/>
+    </svg>
+    <div class="abs mono" id="es-local" style="left:104px;top:860px;font-size:20px;color:var(--tinta)"></div>
+  </div></section>
+
+  <!-- ═════════ AÇÕES ═════════ -->
+  <section class="cena" id="c-acoes"><div class="cam">
+    <div class="abs mono" id="ac-rot" style="left:104px;top:120px;font-size:22px;color:var(--laranja)"></div>
+    <div class="abs" style="left:96px;top:180px;width:760px;height:660px">
+      <div class="chip ac" style="top:0;font-size:118px;background:var(--laranja);color:var(--tinta);font-variation-settings:'wdth' 84">Música</div>
+      <div class="chip ac" style="top:165px;font-size:118px;background:var(--vermelho);color:var(--papel);font-variation-settings:'wdth' 84">Circo</div>
+      <div class="chip ac" style="top:330px;font-size:118px;background:var(--agua);color:var(--tinta);font-variation-settings:'wdth' 84">Teatro</div>
+      <div class="chip ac" style="top:495px;font-size:118px;background:var(--coral);color:var(--tinta);font-variation-settings:'wdth' 84">Literatura</div>
+    </div>
+    <div class="abs cartao" style="left:900px;top:96px;width:470px;height:392px"><div class="foto" style="background-image:url(img/escola-2.jpg)"></div><div class="mono rot">Escolas</div></div>
+    <div class="abs cartao" style="left:1400px;top:130px;width:430px;height:392px"><div class="foto" style="background-image:url(img/participacoes-2.jpg);background-position:center 30%"></div><div class="mono rot">Aldeias</div></div>
+    <div class="abs cartao" style="left:930px;top:520px;width:430px;height:392px"><div class="foto" style="background-image:url(img/participacoes-1.jpg);background-position:center 35%"></div><div class="mono rot">Feiras</div></div>
+    <div class="abs cartao" style="left:1390px;top:556px;width:470px;height:392px"><div class="foto" style="background-image:url(img/politica-1.jpg)"></div><div class="mono rot">Fóruns de cultura</div></div>
+  </div></section>
+
+  <!-- ═════════ FUTURO ═════════ -->
+  <section class="cena" id="c-futuro"><div class="cam">
+    <div class="abs" style="inset:0;background:radial-gradient(ellipse at 80% 70%, rgba(146,194,192,.18), transparent 60%)"></div>
+    <div class="abs mono" id="fu-rot" style="left:104px;top:92px;font-size:20px;color:rgba(251,248,242,.72)">Vem aí</div>
+    <div class="abs disp" id="fu-ano" style="left:92px;top:118px;font-size:250px;color:var(--laranja);font-variation-settings:'wdth' 118"></div>
+    <div class="abs" style="left:100px;top:440px;width:1150px;height:520px">
+      <div class="abs linha-f" style="left:0;top:0;width:1150px"><div class="regua"></div><div class="disp ft">Cineclube Respirartes</div><div class="mono fs">Em parceria com a UNIR · Campus Ji-Paraná</div></div>
+      <div class="abs linha-f" style="left:0;top:178px;width:1150px"><div class="regua"></div><div class="disp ft">Mostra Curta Rio Ji-Paraná</div><div class="mono fs">Filmes produzidos em Ji-Paraná</div></div>
+      <div class="abs linha-f" style="left:0;top:356px;width:1150px"><div class="regua"></div><div class="disp ft">Do Oriente a Belém</div><div class="mono fs">Mostra fotográfica · com a Companhia de Santos Reis</div></div>
+    </div>
+    <div class="abs" id="fu-foto" style="left:1330px;top:440px;width:500px;height:520px;overflow:hidden">
+      <div class="fundo ff" style="inset:0;background-image:url(img/ano41-2.jpg)"></div>
+      <div class="fundo ff" style="inset:0;background-image:url(img/curta-2.jpg);filter:grayscale(1)"></div>
+      <div class="fundo ff" style="inset:0;background-image:url(img/itinerante-2.jpg)"></div>
+      <div class="abs" style="inset:0;box-shadow:inset 0 0 0 2px rgba(251,248,242,.25)"></div>
+    </div>
+  </div></section>
+
+  <!-- ═════════ FECHO ═════════ -->
+  <section class="cena" id="c-fecho"><div class="cam">
+    <svg class="tr" id="fe-aneis" width="560" height="560" style="left:680px;top:-50px" viewBox="0 0 560 560">
+      <circle cx="280" cy="280" r="132" stroke="#BF3423" stroke-width="1.6" opacity=".45"/>
+      <circle cx="280" cy="280" r="168" stroke="#F69728" stroke-width="1.4" opacity=".35"/>
+      <circle cx="280" cy="280" r="208" stroke="#BF3423" stroke-width="1.2" opacity=".2"/>
+    </svg>
+    <img class="abs" id="fe-logo" src="img/logo.jpg" style="left:860px;top:130px;width:200px;height:200px;mix-blend-mode:multiply">
+    <div class="abs disp marca" id="fe-marca" style="left:0;right:0;top:368px;text-align:center"></div>
+    <div class="abs mono" id="fe-ponto" style="left:0;right:0;top:612px;text-align:center;font-size:20px;color:var(--tinta-2)"></div>
+    <div class="abs serif ita" id="fe-lema" style="left:0;right:0;top:668px;text-align:center;font-size:56px;color:var(--vermelho)"></div>
+    <svg class="tr" id="fe-sub" width="1920" height="1080" style="left:0;top:0" viewBox="0 0 1920 1080"><path d="M 668 752 C 820 744, 1100 744, 1252 750" stroke="#F69728" stroke-width="5"/></svg>
+    <div class="abs mono" id="fe-url" style="left:0;right:0;top:806px;text-align:center;font-size:30px;letter-spacing:.3em;color:var(--tinta)"></div>
+    <div class="abs mono" id="fe-redes" style="left:0;right:0;top:860px;text-align:center;font-size:17px;color:var(--tinta-2)">YouTube · Instagram @coletivorespirartes</div>
+  </div></section>
+
+</div>
+
+<canvas id="poeira" width="1920" height="1080"></canvas>
+<div id="leak"></div>
+<div id="pelicula">
+  <div class="barra" style="top:0"><div class="furos"></div></div>
+  <div class="barra" style="bottom:0"><div class="furos"></div><div class="mono" id="contador"></div></div>
+</div>
+<div id="cortina"><div></div><div></div><div></div></div>
+<div id="flash"></div>
+<div id="vinheta"></div>
+<canvas id="grao" width="960" height="540"></canvas>
+<div id="leg"><div class="pill"></div></div>
+</div>
+
+<style>
+  .filme .sombra { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,9,8,.82) 0%, rgba(10,9,8,.2) 38%, transparent 60%); }
+  .filme .cred { left: 100px; bottom: 300px; font-size: 19px; color: var(--laranja); }
+  .filme .tit { left: 92px; bottom: 150px; font-size: 156px; color: var(--papel); font-variation-settings: "wdth" 74; }
+  .cartao { background: var(--papel); padding: 12px 12px 0; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+  .cartao .foto { width: 100%; height: 318px; background-size: cover; background-position: center; }
+  .cartao .rot { font-size: 19px; color: var(--tinta); padding: 18px 4px 0; }
+  .cartao .rot::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--laranja); margin-right: 12px; vertical-align: 1px; }
+  .linha-f .regua { height: 2px; background: rgba(251,248,242,.38); transform-origin: 0 50%; }
+  .linha-f .ft { font-size: 76px; color: var(--papel); font-variation-settings: "wdth" 84; margin-top: 26px; }
+  .linha-f .fs { font-size: 18px; color: rgba(251,248,242,.66); margin-top: 16px; }
+</style>
+
+<script>
+const L = window.LINHA || null;
+const W = 1920, H = 1080;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, p) => a + (b - a) * p;
+const E = {
+  out: x => 1 - Math.pow(1 - x, 3),
+  out5: x => 1 - Math.pow(1 - x, 5),
+  inout: x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+  back: x => { const c1 = 1.5, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); },
+  expo: x => x >= 1 ? 1 : 1 - Math.pow(2, -10 * x),
+};
+const P = (t, a, d) => cl((t - a) / d);
+function rnd(n) { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+
+let C = {}, M = {};
+
+/* ───────── utilidades de texto ───────── */
+function letrasDe(el, txt) {
+  el.innerHTML = "";
+  for (const ch of txt) {
+    const s = document.createElement("span");
+    s.className = "letra";
+    s.textContent = ch === " " ? " " : ch;
+    el.appendChild(s);
+  }
+  return $$(".letra", el);
+}
+function voar(spans, t, T0, o = {}) {
+  const dur = o.dur || .6, stag = o.stag || .045, seed = o.seed || 1, dist = o.dist || 1;
+  spans.forEach((s, k) => {
+    const p = E.out(cl((t - T0 - k * stag) / dur));
+    const r1 = rnd(seed * 31 + k), r2 = rnd(seed * 57 + k * 3), r3 = rnd(seed * 91 + k * 7);
+    if (p >= 1) { s.style.cssText = ""; return; }
+    const q = 1 - p;
+    s.style.opacity = cl(p * 1.8);
+    s.style.transform = `translate(${q * (-320 + 220 * r1) * dist}px, ${q * (90 * (r2 - .3)) * dist}px) rotate(${q * (-34 + 50 * r3)}deg) scale(${1 + q * .3})`;
+    const sp = q * 16;
+    s.style.textShadow = sp > .4 ? `${-sp}px 0 rgba(0,190,255,.55), ${sp}px 0 rgba(255,40,70,.6)` : "none";
+    s.style.filter = `blur(${q * 7}px)`;
+  });
+}
+function linha(el, t, T0, dur = .6) {
+  const sp = el.querySelector(".lin > span") || el;
+  const p = E.out(P(t, T0, dur));
+  sp.style.transform = `translateY(${(1 - p) * 112}%)`;
+  el.style.opacity = t < T0 ? 0 : 1;
+}
+function digitar(el, txt, t, T0, cps = 26, cursor = false) {
+  const n = Math.floor(cl((t - T0) * cps, 0, txt.length));
+  const vis = t >= T0;
+  el.style.opacity = vis ? 1 : 0;
+  let s = txt.slice(0, n);
+  if (cursor && vis && (n < txt.length || Math.floor(t * 2.2) % 2 === 0)) s += "▍";
+  if (el._s !== s) { el.textContent = s; el._s = s; }
+}
+function desenha(path, p) {
+  if (!path._L) { path._L = path.getTotalLength(); path.style.strokeDasharray = path._L + " " + (path._L + 10); }
+  path.style.strokeDashoffset = path._L * (1 - cl(p));
+  path.style.opacity = p <= 0 ? 0 : 1;
+}
+function palavrasEm(el, txt) {
+  el.innerHTML = txt.split(" ").map(w => `<span class="pw" style="display:inline-block;margin-right:.24em">${w}</span>`).join("");
+  return $$(".pw", el);
+}
+
+/* ───────── odômetro ───────── */
+function odoMontar(el, n) {
+  el.innerHTML = "";
+  const wrap = document.createElement("div"); wrap.className = "odo";
+  for (let i = 0; i < n; i++) {
+    const c = document.createElement("span"); c.className = "col";
+    const d = document.createElement("div");
+    for (let k = 0; k < 70; k++) { const s = document.createElement("span"); s.textContent = k % 10; d.appendChild(s); }
+    c.appendChild(d); wrap.appendChild(c);
+  }
+  el.appendChild(wrap);
+  return $$(".col > div", el);
+}
+function odo(cols, t, de, para, Tfim, dur = 1.15) {
+  const p = E.out5(P(t, Tfim - dur, dur));
+  let primeiro = -1;
+  for (let i = 0; i < para.length; i++) if (de[i] !== para[i]) { primeiro = i; break; }
+  cols.forEach((d, i) => {
+    const a = +de[i], b = +para[i];
+    let alvo = b;
+    if (primeiro >= 0 && i >= primeiro) { alvo = b + 10 * Math.min(i - primeiro + 1, 3); while (alvo < a) alvo += 10; }
+    const v = lerp(a, alvo, p);
+    d.style.transform = `translateY(${-v}em)`;
+    const vel = (alvo - a) * (1 - p);
+    d.style.filter = vel > .6 ? `blur(${Math.min(5, vel * .9)}px)` : "none";
+  });
+}
+
+/* ───────── poeira e grão ───────── */
+const pz = $("#poeira").getContext("2d");
+const PART = Array.from({ length: 110 }, (_, k) => ({ x: rnd(k + 1) * W, y: rnd(k + 300) * H, vx: (rnd(k + 600) - .5) * 14, vy: -6 - rnd(k + 900) * 14, r: .8 + rnd(k + 1200) * 2.2, f: rnd(k + 1500) * 6.28 }));
+function poeira(t, claro) {
+  pz.clearRect(0, 0, W, H);
+  for (const p of PART) {
+    const x = ((p.x + p.vx * t) % W + W) % W, y = ((p.y + p.vy * t) % H + H) % H;
+    const a = (.35 + .35 * Math.sin(t * 2.3 + p.f)) * (claro ? .38 : .55);
+    pz.fillStyle = claro ? `rgba(60,48,36,${a})` : `rgba(251,240,220,${a})`;
+    pz.beginPath(); pz.arc(x, y, p.r, 0, 6.283); pz.fill();
+  }
+}
+const graoCanv = $("#grao"), gz = graoCanv.getContext("2d");
+const GRAOS = [];
+for (let g = 0; g < 8; g++) {
+  const im = gz.createImageData(960, 540); let s = 9973 * (g + 1);
+  for (let i = 0; i < im.data.length; i += 4) { s = (s * 16807) % 2147483647; const v = s % 256; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; }
+  GRAOS.push(im);
+}
+graoCanv.style.width = "1920px"; graoCanv.style.height = "1080px";
+
+/* ───────── transições ───────── */
+const PRE = { iris: .22, wipe: .32, zoom: .3, whip: .13 };
+const POS = { iris: .55, wipe: .36, zoom: .36, whip: .17 };
+
+function cenaEl(id) { return $("#c-" + id); }
+
+/* ───────── preparação ───────── */
+function ajustar(el, medida, alvo, base) {
+  const cena = el.closest(".cena"); const d0 = cena.style.display; cena.style.display = "block";
+  el.style.fontSize = base + "px";
+  const larg = medida.getBoundingClientRect().width;
+  if (larg > 0) el.style.fontSize = Math.floor(base * alvo / larg) + "px";
+  cena.style.display = d0;
+}
+let PREP = false;
+const R = {};
+function preparar() {
+  if (PREP) return; PREP = true;
+  L.cenas.forEach((c, k) => { c.k = k; C[c.id] = c; });
+  M = L.marcos;
+  // abertura / fecho: marca
+  for (const id of ["ab-marca", "fe-marca"]) {
+    const el = $("#" + id);
+    el.style.fontSize = "250px"; el.style.fontVariationSettings = "'wdth' 112";
+    el.innerHTML = '<span class="m0" style="display:inline-block"><span class="m1"></span><span class="m2" style="color:var(--vermelho)"></span></span>';
+    el._l = [...letrasDe($(".m1", el), "RESPIR"), ...letrasDe($(".m2", el), "ARTES")];
+    ajustar(el, $(".m0", el), id === "ab-marca" ? 1640 : 1500, 250);
+  }
+  $("#ab-lema")._p = palavrasEm($("#ab-lema"), "Porque eu preciso respirar arte.");
+  $("#fe-lema")._p = palavrasEm($("#fe-lema"), "Porque eu preciso respirar arte.");
+  $("#a22-flores")._l = letrasDe($("#a22-flores"), "FLORES");
+  { const a = $("#pe-art"); ajustar(a, $(".lin > span", a), 960, 200); }
+  $("#a22-verso")._p = palavrasEm($("#a22-verso"), "O nome nasce de dois versos de um poema de Carlos Reis.");
+  $("#a14-ano")._c = odoMontar($("#a14-ano"), 4);
+  $("#a22-ano")._c = odoMontar($("#a22-ano"), 4);
+  $("#a25-ano")._c = odoMontar($("#a25-ano"), 4);
+  $("#fu-ano")._c = odoMontar($("#fu-ano"), 4);
+  $("#pe-num")._c = odoMontar($("#pe-num"), 2);
+  $("#fi-num")._c = odoMontar($("#fi-num"), 1);
+  $$(".filme .tit").forEach((el, k) => { el._l = letrasDe(el, el.textContent); el._seed = 10 + k; });
+  // tira de filmes
+  const tr = $("#fi-trilho");
+  const fs = ["flores", "lidia", "fita", "camadas", "toto", "olhares", "folia"];
+  for (let r = 0; r < 3; r++) for (const f of fs) {
+    const d = document.createElement("div");
+    d.style.cssText = `width:420px;height:236px;flex:none;background:url(img/${f}.jpg) center/cover;filter:${f === "flores" || f === "lidia" ? "grayscale(1)" : "none"}`;
+    tr.appendChild(d);
+  }
+  // escola: comprimento do caminho
+  const cam = $("#es-feito"); cam._L = cam.getTotalLength();
+}
+
+/* ───────── render de cada cena ───────── */
+R["abertura"] = (t, c) => {
+  const m = M.abertura;
+  const pl = E.out(P(t, .2, 1.3));
+  const logo = $("#ab-logo");
+  logo.style.opacity = pl; logo.style.transform = `scale(${.86 + .14 * pl})`;
+  $$("#ab-aneis circle").forEach((ci, k) => desenha(ci, E.inout(P(t, .55 + k * .22, 1.4))));
+  $("#ab-aneis").style.transform = `scale(${1 + .018 * Math.sin(t * 1.4)})`;
+  digitar($("#ab-local"), "JI-PARANÁ · RONDÔNIA · AMAZÔNIA", t, m.local, 28);
+  const mc = $("#ab-marca");
+  voar(mc._l, t, m.letras, { seed: 3, dur: .7, stag: .05 });
+  mc.style.fontVariationSettings = `'wdth' ${112 + 5 * Math.sin((t - m.letras) * .9)}`;
+  const pal = L.palavras.filter(w => w.cena === "abertura" && w.frase === 2);
+  $("#ab-lema")._p.forEach((s, k) => {
+    const T = pal[k] ? pal[k].i : 99;
+    const p = E.out(P(t, T - .05, .45));
+    s.style.opacity = p; s.style.transform = `translateY(${(1 - p) * 26}px)`; s.style.filter = `blur(${(1 - p) * 5}px)`;
+  });
+  desenha($("#ab-elipse path"), E.inout(P(t, m.lema_fim + .1, .75)));
+  return [m.letras + .75];
+};
+
+R["origem"] = (t, c) => {
+  const m = M.origem;
+  linha($("#or-tit"), t, c.ini + .25, .7);
+  const r = $("#or-rot"); r.style.opacity = E.out(P(t, c.ini + .15, .5));
+  linha($("#or-casa-txt"), t, m.casa_txt - .05, .6);
+  $$("#or-casa path").forEach((pa, k) => desenha(pa, E.inout(P(t, m.casa_txt + k * .28, .9))));
+  const jan = $("#or-janela"); const pj = E.back(P(t, m.casa - .05, .45));
+  jan.style.transformOrigin = "230px 245px"; jan.style.transform = `scale(${pj})`;
+  jan.style.opacity = t < m.casa - .05 ? 0 : (.82 + .18 * Math.sin(t * 5));
+  ["or-c1", "or-c2", "or-c3"].forEach((id, k) => {
+    const T = m["chip" + (k + 1)], el = $("#" + id);
+    const p = E.out(P(t, T - .08, .42));
+    el.style.clipPath = `inset(0 ${(1 - p) * 100}% 0 0)`;
+    el.style.transform = `translateX(${(1 - p) * -40}px)`;
+  });
+  return [m.casa, m.chip1, m.chip2, m.chip3];
+};
+
+R["2014"] = (t, c) => {
+  const m = M["2014"];
+  odo($("#a14-ano")._c, t, "1999", "2014", m.ano, 1.6);
+  linha($("#a14-l1"), t, m.grupo - .1, .6);
+  linha($("#a14-l2"), t, m.cine - .1, .6);
+  desenha($("#a14-linha path"), E.inout(P(t, m.cine, .9)));
+  digitar($("#a14-nota"), "AINDA SEM O NOME RESPIRARTES", t, m.cine + .7, 30);
+  return [m.ano];
+};
+
+R["2022"] = (t, c) => {
+  const m = M["2022"];
+  const kb = P(t, c.ini, c.fim - c.ini);
+  $("#a22-fundo").style.transform = `scale(${1.1 - .07 * kb}) translateX(${-20 * kb}px)`;
+  odo($("#a22-ano")._c, t, "2014", "2022", m.ano, 1.1);
+  const pal = L.palavras.filter(w => w.cena === "2022" && w.frase === L.palavras.find(x => x.cena === "2022" && x.w === "Veio").frase);
+  const ps = $("#a22-verso")._p;
+  ps.forEach((s, k) => {
+    const idx = Math.max(0, k - 2);
+    const T = k < 3 ? pal[0].i + k * .07 : (pal[idx] ? pal[idx].i : 99);
+    const p = E.out(P(t, T - .05, .4));
+    s.style.opacity = t < m.verso - .3 ? 0 : (.22 + .78 * p);
+  });
+  $("#a22-rot").style.opacity = E.out(P(t, m.flores - .2, .4));
+  voar($("#a22-flores")._l, t, m.flores - .15, { seed: 7, dur: .45, stag: .03 });
+  return [m.ano, m.flores + .5];
+};
+
+R["2025"] = (t, c) => {
+  const m = M["2025"];
+  odo($("#a25-ano")._c, t, "2022", "2025", m.ano, 1.0);
+  digitar($("#a25-rot"), "O RECONHECIMENTO", t, m.rotulo, 30);
+  linha($("#a25-t1"), t, m.ponto - .08, .5); linha($("#a25-t2"), t, m.ponto + .06, .5);
+  $("#a25-b1").style.transform = `scaleX(${E.out(P(t, m.ponto + .12, .45))})`;
+  $("#a25-b2").style.transform = `scaleX(${E.out(P(t, m.ponto + .24, .45))})`;
+  const ck = $$("#a25-check circle, #a25-check path");
+  desenha(ck[0], E.inout(P(t, m.check, .7))); desenha(ck[1], E.out(P(t, m.check + .55, .4)));
+  const el = $("#a25-linha"); const full = "MINISTÉRIO DA CULTURA · POLÍTICA NACIONAL CULTURA VIVA · ";
+  const n = Math.floor(cl((t - (m.check + .2)) * 34, 0, full.length + 11));
+  const vis = t >= m.check + .2; el.style.opacity = vis ? 1 : 0;
+  const s = full.slice(0, Math.min(n, full.length)) + (n > full.length ? `<span style="color:var(--laranja)">${"ID 13152755".slice(0, n - full.length)}</span>` : "");
+  if (el._s !== s) { el.innerHTML = s; el._s = s; }
+  return [m.ano, m.check + .95];
+};
+
+R["pessoas"] = (t, c) => {
+  const m = M.pessoas;
+  odo($("#pe-num")._c, t, "00", "12", m.num, 1.0);
+  const a = $("#pe-art"); linha(a, t, m.artistas - .1, .55);
+  $$("#pe-banda .pb").forEach((b, k) => {
+    const T = m["b" + (k + 1)];
+    const p = E.back(P(t, T - .06, .5));
+    b.style.transform = `translateY(${(1 - p) * 330}px)`;
+    b.style.opacity = t < T - .06 ? 0 : 1;
+  });
+  return [m.num, m.b1, m.b2, m.b3, m.b4, m.b5];
+};
+
+R["filmes"] = (t, c) => {
+  const m = M.filmes;
+  odo($("#fi-num")._c, t, "0", "7", m.num, .9);
+  linha($("#fi-tit"), t, m.num - .3, .5);
+  linha($("#fi-sub"), t, m.sub - .05, .5);
+  $("#fi-trilho").style.transform = `translateX(${-200 - (t - c.ini) * 240}px)`;
+  const pt = E.out(P(t, c.ini + .15, .6));
+  $("#fi-tira").style.transform = `translateY(${(1 - pt) * 420}px)`;
+  return [m.num];
+};
+
+function rFilme(t, c) {
+  const el = cenaEl(c.id);
+  const kb = P(t, c.ini - .2, (c.fim - c.ini) + .5);
+  $(".fundo", el).style.transform = `scale(${1.12 - .08 * kb}) translateX(${(c.k % 2 ? 1 : -1) * 22 * kb}px)`;
+  voar($(".tit", el)._l, t, M[c.id].titulo - .1, { seed: $(".tit", el)._seed, dur: .3, stag: .014, dist: .5 });
+  $(".cred", el).style.opacity = E.out(P(t, M[c.id].titulo + .08, .3));
+  return [];
+}
+["f-flores", "f-lidia", "f-fita", "f-camadas", "f-toto", "f-olhares", "f-folia"].forEach(id => R[id] = rFilme);
+
+R["temas"] = (t, c) => {
+  const m = M.temas;
+  const ts = [m.p1, m.p2, m.p3, m.p4];
+  const dim = E.out(P(t, m.frase - .2, .8));
+  $$("#c-temas .tp").forEach((pn, k) => {
+    const p = E.inout(P(t, ts[k] - .12, .55));
+    pn.style.clipPath = `inset(0 0 ${(1 - p) * 100}% 0)`;
+    const f = $(".fundo", pn);
+    f.style.filter = `grayscale(${k === 3 ? .55 : .85}) sepia(.25) brightness(${.62 - .2 * dim})`;
+    f.style.transform = `scale(${1.15 - .1 * P(t, ts[k], 6)})`;
+    const lb = $(".tl", pn); const pl = E.out(P(t, ts[k] + .05, .45));
+    lb.style.opacity = pl; lb.style.transform = `translateY(${(1 - pl) * 50}px)`;
+  });
+  linha($("#te-frase"), t, m.frase - .1, .6);
+  $("#te-topo").style.opacity = dim;
+  return ts;
+};
+
+R["mostras"] = (t, c) => {
+  const m = M.mostras;
+  const kb = P(t, c.ini, c.fim - c.ini);
+  $("#mo-fundo").style.transform = `scale(${1.04 + .08 * kb})`;
+  $("#mo-rot").style.opacity = E.out(P(t, c.ini + .3, .5));
+  linha($("#mo-t1"), t, m.titulo - .1, .6); linha($("#mo-t2"), t, m.titulo + .1, .6);
+  [["#mo-m1", m.m1], ["#mo-m2", m.m2]].forEach(([id, T]) => {
+    const el = $(id); const ps = $$("path", el);
+    desenha(ps[0], E.inout(P(t, T - .1, .7))); desenha(ps[1], E.inout(P(t, T + .15, .8)));
+    $$(".mt", el).forEach((x, k) => { const p = E.out(P(t, T + .2 + k * .12, .5)); x.style.opacity = p; x.style.transform = `translateY(${(1 - p) * 18}px)`; });
+  });
+  const pe = P(t, m.estados, .5); const est = $("#mo-est");
+  est.style.display = "inline-block"; est.style.transform = `scale(${1 + .35 * Math.sin(pe * Math.PI)})`;
+  est.style.color = pe > 0 ? "#FFD08A" : "";
+  return [m.m1, m.m2];
+};
+
+R["escola"] = (t, c) => {
+  const m = M.escola;
+  const ps = E.back(P(t, c.ini + .1, .7)); $("#es-sol").style.transform = `scale(${ps})`;
+  linha($("#es-t0"), t, c.ini + .3, .6);
+  linha($("#es-t1"), t, m.cinema - .15, .55); linha($("#es-t2"), t, m.cinema, .55);
+  const pr = E.inout(P(t, m.carro_ini, m.carro_fim - m.carro_ini));
+  const cam = $("#es-feito");
+  const vis = t >= m.carro_ini - .4;
+  $("#es-rota").style.opacity = E.out(P(t, m.carro_ini - .5, .4));
+  $("#es-o").style.opacity = $("#es-d").style.opacity = E.out(P(t, m.carro_ini - .4, .4));
+  cam.style.strokeDasharray = cam._L + " " + (cam._L + 10); cam.style.strokeDashoffset = cam._L * (1 - pr);
+  const pt = cam.getPointAtLength(cam._L * pr), pt2 = cam.getPointAtLength(Math.min(cam._L, cam._L * pr + 2));
+  const ang = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI;
+  const car = $("#es-carro");
+  car.style.opacity = vis ? 1 : 0;
+  car.style.transform = `translate(${pt.x - 48}px, ${pt.y - 48 + Math.sin(t * 22) * 1.2}px) rotate(${ang}deg)`;
+  car.style.transformOrigin = "48px 48px";
+  const dest = $("#es-dest"); const pd = P(t, m.carro_fim - .1, .5);
+  dest.style.transformOrigin = "1800px 690px"; dest.style.transform = `scale(${1 + .6 * Math.sin(pd * Math.PI)})`;
+  digitar($("#es-local"), "ESCOLA JORGE TEIXEIRA · DISTRITO DE NOVA LONDRINA", t, m.local, 34);
+  return [m.carro_fim];
+};
+
+R["acoes"] = (t, c) => {
+  const m = M.acoes;
+  digitar($("#ac-rot"), "E SEGUE LEVANDO", t, m.rotulo - .2, 30);
+  $$("#c-acoes .chip").forEach((el, k) => {
+    const p = E.out(P(t, m["c" + (k + 1)] - .1, .4));
+    el.style.clipPath = `inset(0 ${(1 - p) * 100}% 0 0)`;
+    el.style.transform = `translateX(${(1 - p) * -40}px)`;
+  });
+  const rots = [-2.6, 2.2, 1.6, -2.2];
+  $$("#c-acoes .cartao").forEach((el, k) => {
+    const T = m["f" + (k + 1)];
+    const p = E.back(P(t, T - .1, .5));
+    el.style.opacity = t < T - .1 ? 0 : cl(p * 2);
+    el.style.transform = `translateY(${(1 - p) * 90}px) rotate(${rots[k] + (1 - p) * 8}deg) scale(${.86 + .14 * p})`;
+  });
+  return [m.f1, m.f2, m.f3, m.f4];
+};
+
+R["futuro"] = (t, c) => {
+  const m = M.futuro;
+  $("#fu-rot").style.opacity = E.out(P(t, c.ini + .2, .5));
+  odo($("#fu-ano")._c, t, "2025", "2027", m.ano, 1.0);
+  const ts = [m.r1, m.r2, m.r3];
+  $$("#c-futuro .linha-f").forEach((el, k) => {
+    const T = ts[k];
+    $(".regua", el).style.transform = `scaleX(${E.inout(P(t, T - .1, .7))})`;
+    const p = E.out(P(t, T, .55)), q = E.out(P(t, T + .25, .5));
+    const ft = $(".ft", el), fs = $(".fs", el);
+    ft.style.opacity = p; ft.style.transform = `translateY(${(1 - p) * 40}px)`;
+    fs.style.opacity = q; fs.style.transform = `translateY(${(1 - q) * 16}px)`;
+  });
+  const ff = $$("#fu-foto .ff");
+  ff.forEach((f, k) => {
+    const T = ts[k]; const p = E.inout(P(t, T - .05, .6));
+    const prox = ts[k + 1];
+    f.style.clipPath = `inset(0 0 0 ${(1 - p) * 100}%)`;
+    f.style.transform = `scale(${1.12 - .1 * P(t, T, 5)})`;
+    f.style.display = (t >= T - .05 && (!prox || t < prox + .7)) ? "block" : "none";
+  });
+  $("#fu-foto").style.opacity = t >= m.r1 - .05 ? 1 : 0;
+  return [m.ano];
+};
+
+R["fecho"] = (t, c) => {
+  const m = M.fecho;
+  const pl = E.out(P(t, c.ini + .1, 1.0));
+  const logo = $("#fe-logo"); logo.style.opacity = pl; logo.style.transform = `scale(${.86 + .14 * pl})`;
+  $$("#fe-aneis circle").forEach((ci, k) => desenha(ci, E.inout(P(t, c.ini + .3 + k * .2, 1.2))));
+  $("#fe-aneis").style.transform = `scale(${1 + .018 * Math.sin(t * 1.4)})`;
+  const mc = $("#fe-marca");
+  voar(mc._l, t, m.letras, { seed: 5, dur: .7, stag: .05 });
+  mc.style.fontVariationSettings = `'wdth' ${112 + 5 * Math.sin((t - m.letras) * .9)}`;
+  digitar($("#fe-ponto"), "PONTO DE CULTURA · JI-PARANÁ · RONDÔNIA", t, m.ponto, 30);
+  const pal = L.palavras.filter(w => w.cena === "fecho" && w.frase === L.palavras.find(x => x.cena === "fecho" && x.w === "porque").frase);
+  $("#fe-lema")._p.forEach((s, k) => {
+    const T = pal[k] ? pal[k].i : 99;
+    const p = E.out(P(t, T - .05, .45));
+    s.style.opacity = p; s.style.transform = `translateY(${(1 - p) * 26}px)`; s.style.filter = `blur(${(1 - p) * 5}px)`;
+  });
+  desenha($("#fe-sub path"), E.inout(P(t, m.lema_fim + .05, .7)));
+  digitar($("#fe-url"), "RESPIRARTES.COM", t, m.lema_fim + .55, 14, true);
+  const pr = E.out(P(t, m.lema_fim + 2.1, .7)); const r = $("#fe-redes"); r.style.opacity = pr; r.style.transform = `translateY(${(1 - pr) * 12}px)`;
+  return [m.letras + .75];
+};
+
+/* ───────── legenda ───────── */
+function legenda(t, montagem) {
+  const el = $("#leg"), pill = $(".pill", el);
+  let b = null;
+  for (const x of L.legendas) if (t >= x.ini && t < x.fim) b = x;
+  if (!b || montagem) { el.style.opacity = 0; return; }
+  const op = Math.min(E.out(P(t, b.ini, .18)), 1 - P(t, b.fim - .15, .15));
+  el.style.opacity = op;
+  let h = "";
+  b.palavras.forEach((w, k) => {
+    const cls = t >= w.f ? "dita" : (t >= w.i - .04 ? "agora" : "");
+    h += (k ? " " : "") + `<span class="${cls}">${w.w}</span>`;
+  });
+  if (pill._h !== h) { pill.innerHTML = h; pill._h = h; }
+}
+
+/* ───────── principal ───────── */
+const TOM_CLARO = { abertura: 1, pessoas: 1, fecho: 1, "2014": 1, escola: 1 };
+window.render = function (t) {
+  preparar();
+  const cenas = L.cenas;
+  let atual = cenas.findIndex(c => t >= c.ini && t < c.fim);
+  if (atual < 0) atual = cenas.length - 1;
+  const cur = cenas[atual];
+
+  // quais cenas aparecem
+  cenas.forEach((c, k) => {
+    const el = cenaEl(c.id);
+    const pre = PRE[c.trans] || 0;
+    const nx = cenas[k + 1]; const pos = nx ? (POS[nx.trans] || 0) : 0;
+    const vis = t >= c.ini - pre && t < c.fim + pos;
+    el.style.display = vis ? "block" : "none";
+    el.style.zIndex = k;
+    if (!vis) return;
+    el.style.clipPath = ""; el.style.opacity = 1; el.style.transform = ""; el.style.filter = "";
+    // entrada
+    if (c.trans && t < c.ini + (POS[c.trans] || 0) && PRE[c.trans] !== undefined) {
+      const q = P(t, c.ini - PRE[c.trans], PRE[c.trans] + POS[c.trans]);
+      if (c.trans === "iris") {
+        const ctr = c.id === "escola" ? [1730, 110] : [960, 540];
+        el.style.clipPath = `circle(${E.inout(q) * 2300}px at ${ctr[0]}px ${ctr[1]}px)`;
+      } else if (c.trans === "wipe") {
+        const s = lerp(-420, 2340, E.inout(q));
+        el.style.clipPath = `polygon(0 0, ${s + 420}px 0, ${s}px 1080px, 0 1080px)`;
+      } else if (c.trans === "zoom") {
+        const e = E.out(q); el.style.opacity = e; el.style.transform = `scale(${1.14 - .14 * e})`; el.style.filter = `blur(${(1 - e) * 10}px)`;
+      } else if (c.trans === "whip") {
+        const e = E.inout(q); el.style.transform = `translateX(${(1 - e) * 760}px)`; el.style.filter = `blur(${(1 - e) * 26}px)`; el.style.opacity = cl(e * 2.2);
+      }
+    }
+    // saída
+    if (nx && t >= nx.ini - (PRE[nx.trans] || 0) && PRE[nx.trans] !== undefined) {
+      const q = P(t, nx.ini - PRE[nx.trans], PRE[nx.trans] + POS[nx.trans]);
+      if (nx.trans === "zoom") { const e = E.inout(q); el.style.transform = `scale(${1 + .3 * e})`; el.style.opacity = 1 - e; el.style.filter = `blur(${e * 12}px)`; }
+      if (nx.trans === "whip") { const e = E.inout(q); el.style.transform = `translateX(${-e * 760}px)`; el.style.filter = `blur(${e * 26}px)`; }
+    }
+    // render da cena + câmera
+    const kicks = R[c.id](t, c) || [];
+    let k2 = 0, sh = 0;
+    for (const T of kicks) if (t >= T) { const d = t - T; k2 += .016 * Math.exp(-d / .12); sh += 6 * Math.exp(-d / .08) * Math.sin(d * 90); }
+    const prog = P(t, c.ini, c.fim - c.ini);
+    const drift = c.id.startsWith("f-") ? 0 : 1;
+    $(".cam", el).style.transform = `scale(${1 + drift * .035 * prog + k2}) translate(${drift * Math.sin(t * .35 + k) * 6 + sh}px, ${drift * Math.cos(t * .29 + k) * 4}px)`;
+  });
+
+  // cortina
+  const cort = $("#cortina");
+  let cortVis = false;
+  for (const c of cenas) if (c.trans === "cortina" && t > c.ini - .42 && t < c.ini + .46) {
+    cortVis = true;
+    const cores = c.id === "temas" ? ["#F69728", "#BF3423", "#0D6370"] : ["#BF3423", "#F56631", "#F69728"];
+    $$("div", cort).forEach((d, k) => {
+      d.style.background = cores[k];
+      const a = c.ini - .42 + k * .05;
+      const q = P(t, a, .84);
+      const x = q < .5 ? lerp(-100, 0, E.inout(q * 2)) : lerp(0, 100, E.inout((q - .5) * 2));
+      d.style.transform = `translateX(${x}%) skewX(-8deg)`;
+      d.style.zIndex = k;
+      d.style.width = "112%"; d.style.left = "-6%";
+    });
+  }
+  cort.style.display = cortVis ? "block" : "none";
+
+  // flash
+  let fl = 0;
+  for (const c of cenas) if (c.trans === "flash") fl = Math.max(fl, Math.exp(-Math.pow((t - c.ini) / (c.id.startsWith("f-") ? .07 : .11), 2)));
+  $("#flash").style.opacity = fl * .95;
+
+  // película (montagem)
+  const ini = C["f-flores"].ini, fim = C["temas"].ini;
+  const pel = $("#pelicula");
+  const montagem = t >= ini - .05 && t < fim;
+  pel.style.display = (t >= ini - .2 && t < fim + .3) ? "block" : "none";
+  const pe = E.out(P(t, ini - .2, .3)) * (1 - E.inout(P(t, fim - .1, .4)));
+  $$(".barra", pel).forEach((b, k) => b.style.transform = `translateY(${(k ? 1 : -1) * (1 - pe) * 120}px)`);
+  $$(".furos", pel).forEach(f => f.style.transform = `translateX(${-((t * 140) % 66)}px)`);
+  const idx = ["f-flores", "f-lidia", "f-fita", "f-camadas", "f-toto", "f-olhares", "f-folia"].indexOf(cur.id);
+  $("#contador").textContent = idx >= 0 ? `0${idx + 1} / 07` : "07 / 07";
+  // cintilação de projetor
+  const fr = Math.floor(t * 30);
+  $("#mundo").style.filter = montagem ? `brightness(${1 + (rnd(fr) - .5) * .09}) contrast(1.04)` : "none";
+
+  // luz vazando nas transições
+  let lk = 0;
+  for (const c of cenas) if (c.trans && !c.id.startsWith("f-")) lk = Math.max(lk, Math.exp(-Math.pow((t - c.ini) / .45, 2)));
+  const lkEl = $("#leak");
+  lkEl.style.opacity = .55 * lk + .06;
+  const lx = 30 + 40 * Math.sin(t * .23), ly = 20 + 30 * Math.cos(t * .17);
+  lkEl.style.background = `radial-gradient(ellipse 55% 60% at ${lx}% ${ly}%, rgba(255,150,60,.55), transparent 70%), radial-gradient(ellipse 40% 50% at ${100 - lx}% ${90 - ly}%, rgba(255,90,40,.35), transparent 70%)`;
+
+  // poeira, vinheta, grão
+  const claro = !!TOM_CLARO[cur.id];
+  poeira(t, claro);
+  $("#vinheta").style.background = claro
+    ? "radial-gradient(ellipse at center, transparent 52%, rgba(60,40,20,.20) 100%)"
+    : "radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,.42) 100%)";
+  gz.putImageData(GRAOS[Math.floor(t * 10) % GRAOS.length], 0, 0);
+
+  legenda(t, montagem);
+};
+
+window.pronto = async function () {
+  await document.fonts.ready;
+  const fontes = ['800 100px "Anybody"', 'italic 400 50px "Newsreader"', '400 50px "Newsreader"', '400 20px "DM Mono"'];
+  for (const f of fontes) await document.fonts.load(f);
+  await Promise.all(Array.from(document.images).map(i => i.complete ? 1 : new Promise(r => { i.onload = i.onerror = r; })));
+  // imagens de fundo
+  const urls = new Set();
+  $$("[style]").forEach(e => { const m = /url\(([^)]+)\)/.exec(e.getAttribute("style")); if (m) urls.add(m[1]); });
+  await Promise.all([...urls].map(u => new Promise(r => { const im = new Image(); im.onload = im.onerror = r; im.src = u; })));
+  return fontes.map(f => document.fonts.check(f));
+};
+</script>
+</body>
+</html>
