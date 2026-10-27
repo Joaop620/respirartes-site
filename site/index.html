@@ -1,0 +1,1280 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Coletivo Respirartes, Ponto de Cultura de Ji-Paraná (RO). Cinema, música, teatro, circo e literatura. Porque eu preciso respirar arte.">
+<meta name="theme-color" content="#FBF8F2">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Coletivo Respirartes · Ponto de Cultura">
+<meta property="og:description" content="Coletivo Respirartes, Ponto de Cultura de Ji-Paraná (RO). Cinema, música, teatro, circo e literatura. Porque eu preciso respirar arte.">
+<meta property="og:url" content="https://respirartes.com/">
+<meta property="og:site_name" content="Coletivo Respirartes">
+<meta property="og:image" content="https://respirartes.com/img/compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Respirartes, Ponto de Cultura de Ji-Paraná. Porque eu preciso respirar arte.">
+<meta name="twitter:image" content="https://respirartes.com/img/compartilhar.jpg">
+<link rel="canonical" href="https://respirartes.com/">
+<meta property="og:video" content="https://respirartes.com/video/respirartes.mp4?v=4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="img/logo.jpg">
+<link rel="apple-touch-icon" href="img/logo.jpg">
+<title>Ponto de Cultura Respirartes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=DM+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --papel:    #FBF8F2;
+    --papel-2:  #F1ECE2;
+    --tinta:    #1C1A17;
+    --tinta-2:  #4A4640;
+    --tinta-3:  #857F75;
+    --laranja:  #F69728;
+    --vermelho: #BF3423;
+    --coral:    #F56631;
+    --petroleo: #0D6370;
+    --agua:     #92C2C0;
+    --linha:    #E2DCD0;
+
+    --display: "Anybody", "Arial Narrow", "Helvetica Neue", sans-serif;
+    --texto: "Newsreader", Georgia, "Times New Roman", serif;
+    --mono: "DM Mono", ui-monospace, Menlo, monospace;
+
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: var(--texto);
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    opacity: .075;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap { max-width: 1260px; margin: 0 auto; padding-inline: 28px; }
+
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin: 0; }
+
+  p { margin: 0 0 1em; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ═════════ TOPO ═════════ */
+
+  .topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 24px;
+    flex-wrap: wrap;
+    padding-block: 16px;
+    border-bottom: 1px solid var(--tinta);
+  }
+  .topo .id { display: flex; align-items: center; gap: 12px; }
+  .topo .id img { width: 48px; height: 48px; mix-blend-mode: multiply; display: block; }
+  .topo nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  .topo nav a { text-decoration: none; }
+  .topo nav a:hover { color: var(--vermelho); }
+
+  /* ═════════ HERO ═════════ */
+
+  .hero { padding-block: clamp(30px, 5vw, 56px) clamp(40px, 6vw, 72px); overflow-x: clip; }
+
+  .kicker { display: flex; align-items: center; gap: 12px; margin-bottom: clamp(10px, 2vw, 20px); }
+  .kicker::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--laranja); flex: none; }
+
+  .marca {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(3rem, 13.4vw, 13rem);
+    line-height: .8;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .marca .l1, .marca .l2 { display: inline-block; white-space: nowrap; }
+  .marca .l1 { color: var(--tinta); }
+  .marca .l2 { color: var(--vermelho); }
+
+  .marca .l1 span, .marca .l2 span {
+    display: inline-block;
+    font-variation-settings: "wdth" 100, "wght" 800;
+    animation: folego 6.4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * -0.5818s);
+  }
+
+  @keyframes folego {
+    0%, 100% { font-variation-settings: "wdth" 70,  "wght" 820; }
+    50%      { font-variation-settings: "wdth" 128, "wght" 760; }
+  }
+
+  .marca.medindo span { animation: none; font-variation-settings: "wdth" 99, "wght" 790; }
+  @media (max-width: 720px) { .marca.medindo span { font-variation-settings: "wdth" 128, "wght" 800; } }
+
+  .lema {
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.6vw, 2rem);
+    line-height: 1.2;
+    color: var(--vermelho);
+    margin: clamp(16px, 2.4vw, 26px) 0 0;
+  }
+
+  .hero-base {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 80px);
+    margin-top: clamp(30px, 4.6vw, 52px);
+    padding-top: clamp(22px, 3vw, 30px);
+    border-top: 1px solid var(--tinta);
+    align-items: start;
+  }
+
+  .hero-frase {
+    font-size: clamp(1.3rem, 2.4vw, 1.95rem);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    max-width: 25em;
+    text-wrap: pretty;
+    margin: 0;
+  }
+  .hero-frase em { color: var(--petroleo); }
+
+  .ficha { margin: 0; display: grid; }
+  .ficha div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-block: 11px; border-bottom: 1px solid var(--linha); }
+  .ficha div:first-child { padding-top: 4px; }
+  .ficha dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-3); }
+  .ficha dd { margin: 0; font-family: var(--display); font-weight: 600; font-variation-settings: "wdth" 88; font-size: 17px; text-align: right; }
+
+  /* ═════════ LINGUAGENS ═════════ */
+
+  .linguagens { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
+  .linguagens li {
+    flex: 1 1 150px;
+    min-height: clamp(92px, 11vw, 150px);
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-end;
+    font-family: var(--display);
+    font-weight: 700;
+    font-variation-settings: "wdth" 84;
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .c-petroleo { background: var(--petroleo); color: var(--papel); }
+  .c-laranja  { background: var(--laranja);  color: var(--tinta); }
+  .c-vermelho { background: var(--vermelho); color: var(--papel); }
+  .c-tinta    { background: var(--tinta);    color: var(--laranja); }
+  .c-agua     { background: var(--agua);     color: var(--tinta); }
+  .c-coral    { background: var(--coral);    color: var(--tinta); }
+
+  /* ═════════ TÍTULOS ═════════ */
+
+  section { scroll-margin-top: 16px; }
+
+  .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--tinta-2); margin-bottom: 20px; }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: currentColor; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-variation-settings: "wdth" 78;
+    font-size: clamp(2.3rem, 6vw, 4.6rem);
+    line-height: .9;
+    letter-spacing: -0.012em;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .cabeca {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px 40px;
+    flex-wrap: wrap;
+    margin-bottom: clamp(34px, 5vw, 56px);
+  }
+  .cabeca > p { max-width: 27em; color: var(--tinta-2); font-size: 18px; }
+
+
+  /* ═════════ VÍDEO ═════════ */
+  .video-sec { padding-block: clamp(76px, 10vw, 130px) 0; }
+  .player { position: relative; background: var(--tinta); box-shadow: 18px 18px 0 var(--laranja); margin-right: 18px; }
+  .player video { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; background: var(--tinta); }
+  @media (max-width: 640px) { .player { box-shadow: 10px 10px 0 var(--laranja); margin-right: 10px; } }
+  .baixar { display: inline-block; margin-top: 40px; font-size: 12px; text-decoration: none; border-bottom: 2px solid var(--vermelho); padding-bottom: 4px; }
+  .baixar:hover { color: var(--vermelho); }
+
+  /* ═════════ FILMES ═════════ */
+
+  .filmes { padding-block: clamp(76px, 10vw, 130px) 0; }
+
+  .quadro { position: relative; overflow: hidden; background: var(--tinta); }
+  .quadro img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  a:hover .quadro img { transform: scale(1.035); }
+
+  .duracao {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: var(--tinta);
+    color: var(--papel);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    padding: 4px 8px;
+  }
+
+  .play {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--vermelho);
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transform: scale(.85);
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  .play::after { content: ""; border-left: 13px solid var(--papel); border-top: 8px solid transparent; border-bottom: 8px solid transparent; margin-left: 4px; }
+  a:hover .play, a:focus-visible .play { opacity: 1; transform: scale(1); }
+  @media (hover: none) { .play { opacity: 1; transform: none; } }
+
+  .destaque {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: end;
+    text-decoration: none;
+    margin-bottom: clamp(48px, 7vw, 84px);
+  }
+  .destaque .play { width: 64px; height: 64px; left: 18px; bottom: 18px; }
+  .destaque .play::after { border-left-width: 18px; border-top-width: 11px; border-bottom-width: 11px; }
+  .destaque .duracao { right: 16px; bottom: 16px; }
+
+  .destaque-texto .mono { color: var(--vermelho); margin-bottom: 14px; }
+  .destaque-texto h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-variation-settings: "wdth" 70;
+    font-size: clamp(3rem, 8vw, 6.4rem);
+    line-height: .84;
+    text-transform: uppercase;
+    margin: 0 0 22px;
+  }
+  .destaque-texto p { color: var(--tinta-2); font-size: 18px; max-width: 24em; }
+  .destaque-texto p.mono { font-size: 12px; color: var(--vermelho); }
+  .assistir {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--vermelho);
+    padding-bottom: 4px;
+  }
+  .destaque:hover .assistir { color: var(--vermelho); }
+
+  .grade-filmes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 46px 24px; list-style: none; margin: 0; padding: 0; }
+
+  .filme a { display: block; text-decoration: none; }
+  .filme h3 {
+    font-family: var(--display);
+    font-weight: 750;
+    font-variation-settings: "wdth" 80;
+    font-size: clamp(1.25rem, 1.9vw, 1.6rem);
+    line-height: 1.02;
+    text-transform: uppercase;
+    margin: 18px 0 8px;
+    transition: color .25s ease;
+  }
+  .filme a:hover h3 { color: var(--vermelho); }
+  .filme p { color: var(--tinta-2); font-size: 16.5px; line-height: 1.5; margin: 0; }
+  .filme .vistas { display: block; margin-top: 12px; color: var(--tinta-3); font-size: 11px; }
+
+
+  .creditos { margin: 16px 0 0; display: grid; gap: 7px; padding-top: 14px; border-top: 1px solid var(--linha); }
+  .creditos div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; align-items: baseline; }
+  .creditos dt { white-space: nowrap; font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-3); }
+  .creditos dd { margin: 0; font-size: 15px; line-height: 1.45; color: var(--tinta-2); }
+
+  /* ═════════ SOBRE ═════════ */
+
+  .sobre {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 6vw, 96px);
+    align-items: start;
+    padding-block: clamp(80px, 11vw, 140px);
+  }
+  .sobre-cabeca { position: sticky; top: 28px; }
+  .sobre-cabeca h2 { font-size: clamp(2.6rem, 6.4vw, 5.4rem); }
+  .sobre-cabeca .marca-sol { display: block; width: 64px; height: 64px; border-radius: 50%; background: var(--laranja); margin-top: clamp(26px, 3.5vw, 40px); }
+  .sobre-texto { padding-top: 6px; }
+  .sobre-texto p { max-width: 36em; color: var(--tinta-2); }
+  .sobre-texto p.abre { color: var(--tinta); font-size: 1.22em; line-height: 1.45; letter-spacing: -0.005em; }
+
+  /* ═════════ CITAÇÃO ═════════ */
+
+  .faixa-citacao { background: var(--laranja); padding-block: clamp(60px, 9vw, 120px); }
+  .faixa-citacao blockquote { margin: 0; max-width: 21em; }
+  .faixa-citacao blockquote p { font-style: italic; font-size: clamp(1.7rem, 4.3vw, 3.3rem); line-height: 1.12; letter-spacing: -0.02em; }
+  .faixa-citacao blockquote p::before { content: "“"; color: var(--vermelho); margin-left: -.42em; }
+  .faixa-citacao cite { display: block; font-style: normal; margin-top: 30px; }
+
+  /* ═════════ NÚMEROS ═════════ */
+
+  .faixa-numeros { background: var(--petroleo); color: var(--papel); padding-block: clamp(56px, 8vw, 100px); }
+  .numeros { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; }
+  .numero { border-top: 1px solid rgba(251,248,242,.35); padding-top: 18px; }
+  .numero .valor {
+    font-family: var(--display);
+    font-weight: 700;
+    font-variation-settings: "wdth" 116;
+    font-size: clamp(3rem, 7.2vw, 6rem);
+    line-height: .88;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .numero .valor small { font-size: .42em; letter-spacing: 0; color: var(--laranja); margin-left: 4px; }
+  .numero .rotulo { margin-top: 14px; color: rgba(251,248,242,.8); line-height: 1.6; }
+
+  /* ═════════ TRAJETÓRIA ═════════ */
+
+  .trajetoria { padding-block: clamp(76px, 10vw, 130px) 0; }
+  .trajetoria h2 { margin-bottom: clamp(36px, 5vw, 60px); }
+  .tempo { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.8fr); gap: 0 26px; }
+  .tempo li { position: relative; padding-top: 34px; border-top: 2px solid var(--tinta); }
+  .tempo li::before { content: ""; position: absolute; top: -9px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--papel); border: 2px solid var(--tinta); }
+  .tempo li.futuro { border-top-style: dashed; }
+  .tempo li.futuro::before { background: var(--vermelho); border-color: var(--vermelho); }
+  .tempo .ano { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 110; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; display: block; margin-bottom: 12px; }
+  .tempo p { font-size: 17px; color: var(--tinta-2); max-width: 34em; }
+
+  /* ═════════ AÇÕES ═════════ */
+
+  .acoes { padding-block: clamp(80px, 11vw, 140px) 0; }
+
+  .lista-acoes { display: grid; gap: clamp(76px, 10vw, 128px); }
+
+  .acao {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(24px, 4vw, 60px);
+    align-items: start;
+  }
+  .acao:nth-child(even) { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+  .acao:nth-child(even) .acao-texto { order: 2; }
+
+  .capa {
+    container-type: inline-size;
+    height: clamp(170px, 17vw, 228px);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+  }
+  .capa > * { position: relative; z-index: 1; }
+
+  .capa-topo { display: flex; justify-content: space-between; gap: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+
+  .capa-titulo {
+    font-family: var(--display);
+    font-weight: 800;
+    font-variation-settings: "wdth" 62;
+    font-size: 3rem;
+    font-size: 13.5cqi;
+    line-height: .86;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    transition: font-variation-settings .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .acao:hover .capa-titulo { font-variation-settings: "wdth" 72; }
+
+  .obra-corpo { padding-top: 22px; }
+  .obra-corpo h3 { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 90; font-size: clamp(1.25rem, 1.9vw, 1.55rem); line-height: 1.12; margin: 0 0 12px; }
+  .obra-corpo p { font-size: 17px; line-height: 1.55; color: var(--tinta-2); max-width: 40em; }
+
+  .tags { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; }
+  .tags li { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--tinta-2); border: 1px solid var(--linha); border-radius: 999px; padding: 4px 11px; }
+
+  .k-laranja  { background: var(--laranja);  color: var(--tinta); }
+  .k-laranja::after { content: ""; position: absolute; right: -7%; top: -34%; width: 34%; aspect-ratio: 1; border-radius: 50%; background: var(--vermelho); z-index: 0; }
+  .k-tinta    { background: var(--tinta);    color: var(--papel); }
+  .k-tinta .capa-titulo { color: var(--laranja); }
+  .k-agua     { background: var(--agua);     color: var(--tinta); }
+  .k-petroleo { background: var(--petroleo); color: var(--papel); }
+  .k-petroleo .capa-titulo { color: var(--laranja); }
+  .k-papel    { background: var(--papel-2);  color: var(--tinta); box-shadow: inset 0 0 0 2px var(--tinta); }
+  .k-papel .capa-titulo { color: var(--vermelho); }
+  .k-vermelho { background: var(--vermelho); color: var(--papel); }
+  .k-vermelho::after { content: ""; position: absolute; right: -6%; bottom: -46%; width: 30%; aspect-ratio: 1; border-radius: 50%; background: var(--laranja); z-index: 0; }
+  .k-coral    { background: var(--coral);    color: var(--tinta); }
+  .k-coral .capa-titulo { color: var(--papel); }
+
+  /* mosaicos de fotos */
+  .fotos {
+    display: grid;
+    gap: 10px;
+    height: clamp(300px, 36vw, 480px);
+    margin: 0;
+  }
+  .fotos button {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background: var(--tinta);
+    cursor: zoom-in;
+    min-height: 0;
+    min-width: 0;
+  }
+  .fotos button:focus-visible { outline: 3px solid var(--vermelho); outline-offset: 3px; }
+  .fotos img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .4s ease;
+  }
+  .fotos button:hover img { transform: scale(1.04); }
+  .fotos .contem { background: var(--papel-2); box-shadow: inset 0 0 0 1px var(--linha); }
+  .fotos .contem img { object-fit: contain; padding: 14px; }
+
+  /* quatro: uma grande + três empilhadas */
+  .f-4 { grid-template-columns: 2fr 1fr; grid-template-rows: repeat(3, minmax(0, 1fr)); }
+  .f-4 > :first-child { grid-row: 1 / -1; }
+  /* três: uma grande à esquerda + duas */
+  .f-3 { grid-template-columns: 2fr 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  .f-3 > :first-child { grid-row: 1 / -1; }
+  /* três com cartaz em pé à esquerda */
+  .f-3c { grid-template-columns: 1fr 1.45fr; grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  .f-3c > :first-child { grid-row: 1 / -1; }
+  /* três com foto em pé à direita */
+  .f-3d { grid-template-columns: 1.5fr 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  .f-3d > :last-child { grid-column: 2; grid-row: 1 / -1; }
+  .f-3d > :nth-child(1) { grid-column: 1; grid-row: 1; }
+  .f-3d > :nth-child(2) { grid-column: 1; grid-row: 2; }
+  /* duas lado a lado */
+  .f-2 { grid-template-columns: 3fr 4fr; }
+  /* três em pé */
+  .f-trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .contador-fotos { display: block; margin-top: 12px; color: var(--tinta-3); font-size: 11px; }
+
+  /* ═════════ CERTIFICADO ═════════ */
+
+  .certificado {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+    padding-block: clamp(80px, 11vw, 140px) 0;
+  }
+  .certificado h2 { margin-bottom: 24px; }
+  .certificado .intro { color: var(--tinta-2); max-width: 30em; }
+  .certificado .ficha { margin-top: 26px; }
+  .cert-links { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 30px; }
+  .cert-links a { text-decoration: none; border-bottom: 2px solid var(--vermelho); padding-bottom: 4px; }
+  .cert-links a:hover { color: var(--vermelho); }
+
+  .cert-folha {
+    display: block;
+    position: relative;
+    margin-right: 18px;
+    transform: rotate(-1.4deg);
+    box-shadow: 18px 18px 0 var(--petroleo);
+    transition: transform .6s cubic-bezier(.2,.7,.2,1), box-shadow .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .cert-folha:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 22px 22px 0 var(--petroleo); }
+  .cert-folha img { display: block; width: 100%; height: auto; }
+  .cert-folha .selo {
+    position: absolute;
+    left: -16px;
+    bottom: -18px;
+    background: var(--laranja);
+    color: var(--tinta);
+    padding: 8px 12px;
+    transform: rotate(2deg);
+  }
+
+  /* ═════════ FOTO AMPLIADA ═════════ */
+
+  .lb {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    background: #12110F;
+    color: var(--papel);
+  }
+  .lb::backdrop { background: rgba(18, 17, 15, .96); }
+  .lb[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+  .lb-topo { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; }
+  .lb-topo .mono { color: rgba(251,248,242,.7); }
+  .lb-palco { position: relative; display: grid; place-items: center; min-height: 0; padding: 0 64px; }
+  .lb-palco img { max-width: 100%; max-height: calc(100dvh - 170px); object-fit: contain; display: block; }
+  .lb-legenda { padding: 14px 20px 22px; text-align: center; font-size: 16px; color: rgba(251,248,242,.82); max-width: 52em; margin: 0 auto; }
+  .lb button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 1px solid rgba(251,248,242,.35);
+    cursor: pointer;
+  }
+  .lb button:hover { border-color: var(--laranja); color: var(--laranja); }
+  .lb button:focus-visible { outline: 2px solid var(--laranja); outline-offset: 3px; }
+  .lb .lb-fechar { white-space: nowrap; flex: none; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; }
+  .lb .lb-seta { background: rgba(18,17,15,.62); position: absolute; top: 50%; translate: 0 -50%; width: 48px; height: 48px; border-radius: 50%; font-size: 22px; line-height: 1; }
+  .lb-ant { left: 10px; }
+  .lb-prox { right: 10px; }
+
+  /* ═════════ CANAIS ═════════ */
+
+  .faixa-canais { background: var(--vermelho); color: var(--papel); margin-top: clamp(90px, 12vw, 150px); padding-block: clamp(64px, 9vw, 116px); }
+  .faixa-canais h2 { font-size: clamp(2.6rem, 8vw, 6.4rem); margin-bottom: clamp(30px, 4vw, 48px); }
+
+  .canais { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .canais a {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    background: var(--tinta);
+    color: var(--papel);
+    text-decoration: none;
+    padding: clamp(22px, 3vw, 32px);
+    transition: background-color .3s ease, color .3s ease;
+  }
+  .canais a:hover { background: var(--papel); color: var(--tinta); }
+  .canais a:focus-visible { outline-color: var(--papel); }
+  .canais .rede { color: var(--laranja); }
+  .canais a:hover .rede { color: var(--vermelho); }
+  .canais .arroba { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 80; font-size: clamp(1.5rem, 3.4vw, 2.5rem); line-height: 1; overflow-wrap: anywhere; }
+  .canais .arroba::after { content: " →"; }
+
+  /* ═════════ RODAPÉ ═════════ */
+
+  .pe { background: var(--tinta); color: rgba(251,248,242,.66); padding-block: 46px 70px; }
+  .pe .wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 40px; flex-wrap: wrap; }
+  .pe .assinatura { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 70; font-size: clamp(1.6rem, 4vw, 2.4rem); text-transform: uppercase; line-height: .9; color: var(--papel); margin-bottom: 10px; }
+  .pe .assinatura span { color: var(--laranja); }
+  .pe .lema-pe { font-style: italic; color: var(--papel); font-size: 17px; margin-bottom: 12px; }
+  .pe .mono { line-height: 2; font-size: 11px; }
+
+  /* ═════════ RESPONSIVO ═════════ */
+
+  @media (max-width: 980px) {
+    .grade-filmes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .destaque { grid-template-columns: 1fr; }
+    .acao, .acao:nth-child(even), .certificado { grid-template-columns: 1fr; }
+    .acao:nth-child(even) .acao-texto { order: 0; }
+    .acao-texto { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 0 28px; align-items: start; }
+    .acao-texto .obra-corpo { padding-top: 0; }
+    .cert-folha { max-width: 760px; }
+    .sobre { grid-template-columns: 1fr; }
+    .sobre-cabeca { position: static; }
+    .numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; }
+    .tempo { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 26px; }
+  }
+
+  @media (max-width: 720px) {
+    .marca { white-space: normal; }
+    .marca .l1, .marca .l2 { display: block; width: max-content; }
+    .marca .l2 { margin-left: auto; }
+    .hero-base { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 18px; }
+    .wrap { padding-inline: 20px; }
+    .topo nav { gap: 16px; }
+    .grade-filmes { grid-template-columns: 1fr; }
+    .acao-texto { display: block; }
+    .acao-texto .obra-corpo { padding-top: 22px; }
+    .capa-titulo { font-size: 17cqi; }
+    .fotos, .f-4, .f-3, .f-3c, .f-3d, .f-2, .f-trio { height: auto; grid-template-columns: 1fr 1fr; grid-template-rows: 58vw; grid-auto-rows: 38vw; }
+    .fotos > * { grid-column: auto !important; grid-row: auto !important; }
+    .fotos > :first-child { grid-column: 1 / -1 !important; }
+    .f-4 > :last-child { grid-column: 1 / -1 !important; }
+    .fotos.f-2 { grid-template-rows: 66vw; }
+    .f-2 > :first-child { grid-column: auto !important; }
+    .fotos.f-trio { grid-template-rows: 96vw; grid-auto-rows: 62vw; }
+    .fotos.f-3c { grid-template-rows: 40vw 40vw; }
+    .f-3c > :first-child { grid-column: 1 !important; grid-row: 1 / 3 !important; }
+    .lb-palco { padding: 0 8px; }
+    .lb .lb-seta { width: 42px; height: 42px; }
+    .cert-folha { margin-right: 10px; box-shadow: 10px 10px 0 var(--petroleo); }
+    .canais { grid-template-columns: 1fr; }
+    .tempo { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .marca .l1 span, .marca .l2 span { animation: none; font-variation-settings: "wdth" 100, "wght" 800; }
+    * { transition: none !important; }
+  }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+
+  /* ═════════ TEXTO JUSTIFICADO ═════════ */
+  .hero-frase, .cabeca > p, .destaque-texto p:not(.mono), .filme p, .sobre-texto p,
+  .tempo p, .obra-corpo p, .certificado .intro {
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
+  }
+
+  .so-clique { display: none; }
+  @media (hover: hover) and (pointer: fine) { .so-toque { display: none; } .so-clique { display: inline; } }
+
+  /* ═════════ ENTRADAS ═════════ */
+  .js .rv { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); transition-delay: var(--atraso, 0s); }
+  .js .rv.visto { opacity: 1; transform: none; }
+
+  /* ═════════ ACESSO ═════════ */
+  .pular { position: absolute; left: 12px; top: -60px; z-index: 50; background: var(--tinta); color: var(--papel); padding: 10px 14px; text-decoration: none; }
+  .pular:focus { top: 12px; }
+  .subir { text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; color: var(--papel); }
+  .subir:hover { color: var(--laranja); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .rv { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "PerformingGroup", "name": "Coletivo Respirartes", "alternateName": "Ponto de Cultura Respirartes", "slogan": "Porque eu preciso respirar arte.", "url": "https://respirartes.com/", "logo": "https://respirartes.com/img/logo.jpg", "image": "https://respirartes.com/img/compartilhar.jpg", "foundingDate": "2014", "address": {"@type": "PostalAddress", "addressLocality": "Ji-Paraná", "addressRegion": "RO", "addressCountry": "BR"}, "sameAs": ["https://www.youtube.com/@coletivorespirartes", "https://www.instagram.com/coletivorespirartes"]}</script>
+</head>
+<body>
+<a class="pular mono" href="#video">Pular para o conteúdo</a>
+<div class="wrap">
+  <header class="topo">
+    <div class="id">
+      <img src="img/logo.jpg" alt="Logo do Respirartes: pulmões formados por um violino e uma máscara de teatro">
+      <p class="mono">Ponto de Cultura · Ji-Paraná, RO</p>
+    </div>
+    <nav class="mono" aria-label="Seções">
+      <a href="#video">Vídeo</a>
+      <a href="#filmes">Filmes</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#acoes">Ações</a>
+      <a href="#certificado">Certificado</a>
+      <a href="#canais">Onde ver</a>
+    </nav>
+  </header>
+
+  <!-- ═════════ HERO ═════════ -->
+  <div class="hero">
+    <p class="mono kicker">Coletivo</p>
+
+    <h1 class="marca" aria-label="Respirartes"><span class="l1" aria-hidden="true"><span style="--i:0">R</span><span style="--i:1">e</span><span style="--i:2">s</span><span style="--i:3">p</span><span style="--i:4">i</span><span style="--i:5">r</span></span><span class="l2" aria-hidden="true"><span style="--i:6">a</span><span style="--i:7">r</span><span style="--i:8">t</span><span style="--i:9">e</span><span style="--i:10">s</span></span></h1>
+
+    <p class="lema">Porque eu preciso respirar arte.</p>
+
+    <div class="hero-base">
+      <p class="hero-frase">Doze artistas de Ji-Paraná fazendo cinema, música, teatro, circo e literatura, e levando essa produção para onde ela dificilmente chega: <em>escola de distrito, zona rural, colônia de pescadores.</em></p>
+
+      <dl class="ficha">
+        <div><dt>Desde</dt><dd>2014</dd></div>
+        <div><dt>Ponto de Cultura</dt><dd>desde 2025</dd></div>
+        <div><dt>Integrantes</dt><dd>12 artistas</dd></div>
+        <div><dt>Filmes no canal</dt><dd>7</dd></div>
+        <div><dt>Cultura Viva</dt><dd><a href="#certificado">ID 13152755</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════ LINGUAGENS ═════════ -->
+<ul class="linguagens" aria-label="Linguagens do coletivo">
+  <li class="c-petroleo">Audiovisual</li>
+  <li class="c-laranja">Música</li>
+  <li class="c-vermelho">Circo</li>
+  <li class="c-tinta">Literatura</li>
+  <li class="c-agua">Teatro</li>
+  <li class="c-coral">Design</li>
+  <li class="c-petroleo">Política cultural</li>
+</ul>
+
+<!-- ═════════ VÍDEO ═════════ -->
+<section id="video" class="wrap video-sec">
+  <div class="cabeca">
+    <div>
+      <p class="mono eyebrow">Em dois minutos</p>
+      <h2>Conheça o<br>Respirartes</h2>
+    </div>
+    <p>A história do coletivo, os filmes e o que vem por aí, num vídeo curto para assistir e compartilhar.</p>
+  </div>
+  <div class="player">
+    <video controls preload="metadata" playsinline poster="video/capa.jpg?v=4">
+      <source src="video/respirartes.mp4?v=4" type="video/mp4">
+      Seu navegador não reproduz vídeo. <a href="video/respirartes.mp4?v=4">Baixe o vídeo aqui.</a>
+    </video>
+  </div>
+  <a class="baixar mono" href="video/Respirartes_alta_qualidade.mp4?v=4" download>Baixar o vídeo em alta qualidade · 1080p</a>
+  <p class="mono" style="margin-top:14px;font-size:11px;color:var(--tinta-3)">Narração de Carlos Reis</p>
+</section>
+
+<!-- ═════════ FILMES ═════════ -->
+<section id="filmes" class="wrap filmes">
+  <div class="cabeca">
+    <div>
+      <p class="mono eyebrow">Filmes</p>
+      <h2>Sete filmes,<br>todos daqui</h2>
+    </div>
+    <p>Curtas de ficção e documentários feitos em Ji-Paraná. Estão todos no canal do coletivo, de graça, para quem quiser assistir.</p>
+  </div>
+
+  <a class="destaque" href="https://www.youtube.com/watch?v=P2eHKTmH0EI" target="_blank" rel="noopener">
+    <div class="quadro">
+      <img src="img/flores.jpg" alt="Cena em preto e branco do curta Flores: uma mulher estende um buquê de flores a um homem.">
+      <span class="play" aria-hidden="true"></span>
+      <span class="duracao">21:46</span>
+    </div>
+    <div class="destaque-texto">
+      <p class="mono">Curta-metragem · direção Carlos Reis</p>
+      <h3>Flores</h3>
+      <p>O filme que deu nome ao coletivo. Produção independente. Foi o primeiro a sair com a assinatura Respirartes nos créditos.</p>
+      <span class="assistir">Assistir no YouTube <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+
+  <ul class="grade-filmes">
+    <li class="filme">
+      <a href="https://www.youtube.com/watch?v=3jKE1dyM8Io" target="_blank" rel="noopener">
+        <div class="quadro">
+          <img src="img/lidia.jpg" alt="Cena em preto e branco do curta Dona Lídia: retrato de uma mulher de cabelos longos ao ar livre." loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+          <span class="duracao">14:50</span>
+        </div>
+        <h3>Dona Lídia</h3>
+        <p>Fernando e a cadeirante Lídia vivem sob a sombra de um mesmo luto, mas o enfrentam de forma distinta. O filme mais assistido do canal.</p>
+        <dl class="creditos"><div><dt>Direção</dt><dd>Carlos Reis</dd></div><div><dt>Música</dt><dd>Wendeon França</dd></div><div><dt>Elenco</dt><dd>Zieli Santos, Artur Nestor, Rafaela Oliveira e Maurício Souza</dd></div></dl>
+      </a>
+    </li>
+    <li class="filme">
+      <a href="https://www.youtube.com/watch?v=p_vLT_Wnons" target="_blank" rel="noopener">
+        <div class="quadro">
+          <img src="img/fita.jpg" alt="Cena do filme Fita: uma senhora numa cadeira de varanda verde conversa com um homem de barba." loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+          <span class="duracao">15:49</span>
+        </div>
+        <h3>Fita</h3>
+        <p>O luto na terceira idade, vivido pela personagem Irene. Um tema tabu em nossa sociedade e pouco explorado na cinematografia rondoniense.</p>
+        <dl class="creditos"><div><dt>Direção</dt><dd>Carlos Reis</dd></div><div><dt>Música</dt><dd>Wendeon França</dd></div><div><dt>Elenco</dt><dd>Leninha Bastos, Artur Nestor, Duda Almeida e Taynara de Paula</dd></div></dl>
+      </a>
+    </li>
+    <li class="filme">
+      <a href="https://www.youtube.com/watch?v=4H-TzRVs_nI" target="_blank" rel="noopener">
+        <div class="quadro">
+          <img src="img/camadas.jpg" alt="Cena do curta Camadas: uma mulher come sozinha à mesa de uma cozinha." loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+          <span class="duracao">15:01</span>
+        </div>
+        <h3>Camadas</h3>
+        <p>O filme debate questões de feminicídios gerados por ciúmes. Os depoimentos ganham as ruas, em lembranças, revoltas e lutos.</p>
+        <dl class="creditos"><div><dt>Direção</dt><dd>Carlos Reis</dd></div><div><dt>Música</dt><dd>Dheymysson Bohre</dd></div><div><dt>Elenco</dt><dd>Leninha Bastos, Taynara de Paula, Duda Almeida e Vera Márcia</dd></div></dl>
+      </a>
+    </li>
+    <li class="filme">
+      <a href="https://www.youtube.com/watch?v=TfFOsAgfcnE" target="_blank" rel="noopener">
+        <div class="quadro">
+          <img src="img/toto.jpg" alt="Cena do documentário Deus, eu e o cachorro Totó: um casal sentado lado a lado num quintal de terra." loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+          <span class="duracao">24:42</span>
+        </div>
+        <h3>Deus, eu e o cachorro Totó</h3>
+        <p>Documentário sobre Bahia, idoso, negro e bastião da Companhia de Santos Reis, de Ji-Paraná, responsável pela Folia de Reis no município-sede e em mais três municípios.</p>
+        <dl class="creditos"><div><dt>Idealização</dt><dd>José Renildo Bomfim</dd></div><div><dt>Direção</dt><dd>Carlos Reis</dd></div><div><dt>Trilha</dt><dd>Entoada por foliões da Companhia</dd></div></dl>
+      </a>
+    </li>
+    <li class="filme">
+      <a href="https://www.youtube.com/watch?v=3DFnbmEFFc4" target="_blank" rel="noopener">
+        <div class="quadro">
+          <img src="img/olhares.jpg" alt="Cena do documentário Olhares: dois músicos rindo, sentados diante de uma bateria." loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+          <span class="duracao">25:26</span>
+        </div>
+        <h3>Olhares</h3>
+        <p>Documentário sobre o fazer musical em Ji-Paraná, segundo a visão de diversos músicos atuantes no movimento cultural da cidade.</p>
+        <dl class="creditos"><div><dt>Direção</dt><dd>Dheymysson Bohre</dd></div><div><dt>Elenco</dt><dd>Eri Igor, Yasmim Lapimberg, Kessi Lorrayne, Gildásio Ferreira, Marcus Rosa, Wendeon França e outros</dd></div></dl>
+      </a>
+    </li>
+    <li class="filme">
+      <a href="https://www.youtube.com/watch?v=KHNCuCTj_xk" target="_blank" rel="noopener">
+        <div class="quadro">
+          <img src="img/folia.jpg" alt="Cena do documentário Devoção e Folia de Reis: um senhor de óculos fala à câmera durante uma festa à noite." loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+          <span class="duracao">24:55</span>
+        </div>
+        <h3>Devoção e Folia de Reis</h3>
+        <p>Documentário sobre a Companhia de Santos Reis, sob a ótica da devoção. Participante da 18ª Mostra Internacional de Cinema Negro (2022) e do projeto Mostra Sesc Amazônia das Artes (2025), em 10 estados brasileiros.</p>
+        <dl class="creditos"><div><dt>Direção</dt><dd>Carlos Reis</dd></div><div><dt>Edição final</dt><dd>Vicente Neto</dd></div></dl>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- ═════════ SOBRE ═════════ -->
+<section id="sobre" class="wrap sobre">
+  <div class="sobre-cabeca">
+    <p class="mono eyebrow">Sobre</p>
+    <h2>Antes do nome, um hábito</h2>
+    <span class="marca-sol" aria-hidden="true"></span>
+  </div>
+
+  <div class="sobre-texto">
+    <p class="abre">Por muitos anos o Respirartes não tinha nome. Eram pessoas se reunindo em uma casa, às vezes para tocar violão, às vezes para discutir políticas culturais, às vezes para escrever projetos.</p>
+
+    <p>Desses encontros saíram o Grupo Parafernália de Teatro, o Cineclube Ano 41, que durou cinco anos, e parte da articulação das políticas culturais do município, incluindo a que ajudou a criar o Conselho Municipal de Política Cultural de Ji-Paraná (CMPCJP).</p>
+
+    <p>O nome veio em 2022, através de dois versos de um poema de Carlos Reis, e apareceu pela primeira vez nos créditos do curta-metragem <em>Flores</em>. Em janeiro de 2025, o grupo procurou o representante dos Pontos de Cultura de Rondônia, fez a devida parte burocrática e virou Ponto de Cultura, sob ID 13152755 MinC PNCV.</p>
+
+    <p>Hoje são doze pessoas. Cada uma segue com o próprio trabalho. Quando esses trabalhos se encontram e o grupo soma alguma coisa, o resultado sai com a assinatura do coletivo.</p>
+  </div>
+</section>
+
+<!-- ═════════ CITAÇÃO ═════════ -->
+<div class="faixa-citacao">
+  <div class="wrap">
+    <blockquote>
+      <p>De quem só se reunia em casa pra conversar sobre cultura até os projetos que vêm aí, é uma curva ascendente muito grande.</p>
+      <cite class="mono">Carlos Reis, presidente do coletivo</cite>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═════════ NÚMEROS ═════════ -->
+<div class="faixa-numeros">
+  <div class="wrap numeros">
+    <div class="numero">
+      <div class="valor">12</div>
+      <p class="mono rotulo">Artistas no coletivo</p>
+    </div>
+    <div class="numero">
+      <div class="valor">7</div>
+      <p class="mono rotulo">Filmes no canal</p>
+    </div>
+    <div class="numero">
+      <div class="valor">8<small>mil</small></div>
+      <p class="mono rotulo">Visualizações no YouTube</p>
+    </div>
+    <div class="numero">
+      <div class="valor">2h22</div>
+      <p class="mono rotulo">De filmes publicados</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════ TRAJETÓRIA ═════════ -->
+<section class="wrap trajetoria">
+  <p class="mono eyebrow">Trajetória</p>
+  <h2>De uma sala de casa<br>à rede estadual</h2>
+
+  <ol class="tempo">
+    <li>
+      <span class="ano">2014</span>
+      <p>Nascem o Grupo Parafernália de Teatro e o Cineclube Ano 41, frutos da prática de encontros desenvolvida ao longo dos anos. Ainda não havia o nome Respirartes, e participava apenas parte dos atuais membros do coletivo.</p>
+    </li>
+    <li>
+      <span class="ano">2022</span>
+      <p>O curta <em>Flores</em> sai com a assinatura do coletivo nos créditos. É aqui que o nome passa a existir.</p>
+    </li>
+    <li>
+      <span class="ano">2025</span>
+      <p>Reconhecimento como Ponto de Cultura, junto ao Ministério da Cultura, na Política Nacional Cultura Viva, e à representação do estado de Rondônia. Participa de fóruns e conferências municipais e estaduais.</p>
+    </li>
+    <li class="futuro">
+      <span class="ano">2027</span>
+      <p>Implantação do projeto “Cineclube Respirartes e Algo Mais”, em parceria com a Universidade Federal de Rondônia (UNIR), campus de Ji-Paraná. Exibição da Mostra Curta Rio Ji-Paraná, com filmes produzidos em Ji-Paraná. Circulação da Mostra Fotográfica “Do Oriente a Belém: a Viagem da Bandeira de Santos Reis”, em parceria com a Companhia de Santos Reis. Realização de ações formativas, rodas de conversa, apresentações musicais, circenses e muito mais.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ═════════ CERTIFICADO ═════════ -->
+<section id="certificado" class="wrap certificado">
+  <div>
+    <p class="mono eyebrow">Certificação</p>
+    <h2>Ponto de Cultura, no papel</h2>
+    <p class="intro">O Respirartes está no Cadastro Nacional de Pontos e Pontões de Cultura. O certificado é do Ministério da Cultura, pela Secretaria de Cidadania e Diversidade Cultural, dentro da Política Nacional Cultura Viva (Lei nº 13.018/2014).</p>
+    <dl class="ficha">
+      <div><dt>Cadastro</dt><dd>Pontos e Pontões de Cultura</dd></div>
+      <div><dt>ID</dt><dd>13152755</dd></div>
+      <div><dt>Local</dt><dd>Ji-Paraná, RO</dd></div>
+      <div><dt>Emitido por</dt><dd>Ministério da Cultura</dd></div>
+    </dl>
+    <div class="cert-links mono">
+      <a href="certificado-ponto-de-cultura-respirartes.pdf" target="_blank" rel="noopener">Abrir o certificado · PDF</a>
+      <a href="https://culturaviva.cultura.gov.br/certificado/140540/" target="_blank" rel="noopener">Conferir no Cultura Viva ↗</a>
+    </div>
+  </div>
+  <a class="cert-folha" href="certificado-ponto-de-cultura-respirartes.pdf" target="_blank" rel="noopener" aria-label="Abrir o certificado de Ponto de Cultura em PDF">
+    <img src="img/certificado-m.jpg" srcset="img/certificado-m.jpg 900w, img/certificado.jpg 1800w" sizes="(max-width: 980px) 92vw, 680px" width="1800" height="1234" loading="lazy" alt="Certificado do Ministério da Cultura: Ponto de Cultura Coletivo Respirartes, ID 13152755, Ji-Paraná, Rondônia, emitido pelo Cadastro Nacional de Pontos e Pontões de Cultura.">
+    <span class="selo mono">Cultura Viva · MinC</span>
+  </a>
+</section>
+
+<!-- ═════════ AÇÕES ═════════ -->
+<section id="acoes" class="wrap acoes">
+  <div class="cabeca">
+    <div>
+      <p class="mono eyebrow">Ações</p>
+      <h2>Fora da tela</h2>
+    </div>
+    <p>Escola, cineclube, teatro, mostra, fórum de cultura, aldeia. O coletivo vai até onde a programação cultural da cidade costuma não chegar.</p>
+  </div>
+
+  <div class="lista-acoes">
+    <article class="acao" id="acao-escolas">
+      <div class="acao-texto">
+        <div class="capa k-laranja">
+          <div class="capa-topo"><span>Em andamento</span><span>Escolas públicas</span></div>
+          <div class="capa-titulo">Cultura nas escolas</div>
+          <div class="capa-topo"><span>Ji-Paraná e distritos</span></div>
+        </div>
+        <div class="obra-corpo">
+        <h3>Cultura nas escolas</h3>
+        <p>O coletivo colocou som, livros e equipamento de audiovisual num carro e levou cinema e literatura para uma escola do distrito de Nova Londrina. A escola cedeu a tarde inteira e todos os alunos. Foi a ação de maior retorno até hoje, num lugar onde esse tipo de programação praticamente não chega.</p>
+        <p>Da mesma forma, já levou música, teatro, literatura, palestras culturais e audiovisual a diversas escolas públicas do município de Ji-Paraná.</p>
+        <ul class="tags"><li>Música</li><li>Teatro</li><li>Cinema</li><li>Literatura</li><li>Zona distrital</li></ul>
+        <span class="mono contador-fotos">4 fotos · <span class="so-toque">toque</span><span class="so-clique">clique</span> para ampliar</span>
+        </div>
+      </div>
+      <div class="fotos f-4" data-galeria="Cultura nas escolas">
+        <button type="button" data-grande="img/acoes/escola-2.jpg" aria-label="Ampliar foto 1 de 4: Pátio de escola lotado de alunos de uniforme assistindo a uma apresentação do coletivo."><img src="img/acoes/escola-2-m.jpg" alt="Pátio de escola lotado de alunos de uniforme assistindo a uma apresentação do coletivo." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/escola-1.jpg" aria-label="Ampliar foto 2 de 4: Três integrantes do coletivo tocam e cantam no pátio coberto de uma escola."><img src="img/acoes/escola-1-m.jpg" alt="Três integrantes do coletivo tocam e cantam no pátio coberto de uma escola." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/escola-3.jpg" aria-label="Ampliar foto 3 de 4: Turma de alunos posa numa sala de aula ao lado de uma artista de vestido laranja, que segura um livro."><img src="img/acoes/escola-3-m.jpg" alt="Turma de alunos posa numa sala de aula ao lado de uma artista de vestido laranja, que segura um livro." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/escola-4.jpg" aria-label="Ampliar foto 4 de 4: Artista com máscara e camiseta com a frase “Racismo é crime” se apresenta numa sala de aula enquanto alunos levantam a mão."><img src="img/acoes/escola-4-m.jpg" alt="Artista com máscara e camiseta com a frase “Racismo é crime” se apresenta numa sala de aula enquanto alunos levantam a mão." loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+    <article class="acao" id="acao-ano41">
+      <div class="acao-texto">
+        <div class="capa k-tinta">
+          <div class="capa-topo"><span>2014–2019</span><span>Volta em 2027</span></div>
+          <div class="capa-titulo">Ano 41</div>
+          <div class="capa-topo"><span>Cineclube</span></div>
+        </div>
+        <div class="obra-corpo">
+        <h3>Cineclube Ano 41</h3>
+        <p>Cinco anos de exibições, rodas de conversa e oficinas sobre cinema em Ji-Paraná, antes mesmo de o coletivo ter nome. Interrompido pela pandemia, voltará no início de 2027, com o nome Cineclube Respirartes, em parceria com a UNIR.</p>
+        <ul class="tags"><li>Exibição</li><li>Roda de conversa</li><li>Oficinas</li></ul>
+        <span class="mono contador-fotos">2 fotos · <span class="so-toque">toque</span><span class="so-clique">clique</span> para ampliar</span>
+        </div>
+      </div>
+      <div class="fotos f-2" data-galeria="Cineclube Ano 41">
+        <button type="button" class="contem" data-grande="img/acoes/ano41-1.jpg" aria-label="Ampliar foto 1 de 2: Cartaz do Cineclube Ano 41: sessões todas as quartas-feiras, às 19h45, com entrada gratuita, na UNIR."><img src="img/acoes/ano41-1-m.jpg" alt="Cartaz do Cineclube Ano 41: sessões todas as quartas-feiras, às 19h45, com entrada gratuita, na UNIR." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/ano41-2.jpg" aria-label="Ampliar foto 2 de 2: Roda de conversa do cineclube numa sala ampla, com o público sentado em círculo."><img src="img/acoes/ano41-2-m.jpg" alt="Roda de conversa do cineclube numa sala ampla, com o público sentado em círculo." loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+    <article class="acao" id="acao-parafernalia">
+      <div class="acao-texto">
+        <div class="capa k-agua">
+          <div class="capa-topo"><span>2014–2017</span></div>
+          <div class="capa-titulo">Para<wbr>fernália</div>
+          <div class="capa-topo"><span>Grupo de teatro</span></div>
+        </div>
+        <div class="obra-corpo">
+        <h3>Grupo Parafernália de Teatro</h3>
+        <p>O grupo de teatro formado por parte do mesmo núcleo de artistas que depois passaria a assinar como Respirartes.</p>
+        <ul class="tags"><li>Teatro</li></ul>
+        <span class="mono contador-fotos">3 fotos · <span class="so-toque">toque</span><span class="so-clique">clique</span> para ampliar</span>
+        </div>
+      </div>
+      <div class="fotos f-3c" data-galeria="Grupo Parafernália de Teatro">
+        <button type="button" class="contem" data-grande="img/acoes/parafernalia-3.jpg" aria-label="Ampliar foto 1 de 3: Cartaz da peça “A Escolha Errada”, do Grupo Parafernália de Teatro, com o elenco de figurino."><img src="img/acoes/parafernalia-3-m.jpg" alt="Cartaz da peça “A Escolha Errada”, do Grupo Parafernália de Teatro, com o elenco de figurino." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/parafernalia-1.jpg" aria-label="Ampliar foto 2 de 3: Três atores do grupo, de figurino, posam juntos depois de uma apresentação."><img src="img/acoes/parafernalia-1-m.jpg" alt="Três atores do grupo, de figurino, posam juntos depois de uma apresentação." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/parafernalia-2.jpg" aria-label="Ampliar foto 3 de 3: Ator de túnica colorida e estola vermelha se apresenta à noite, ao ar livre, diante do público."><img src="img/acoes/parafernalia-2-m.jpg" alt="Ator de túnica colorida e estola vermelha se apresenta à noite, ao ar livre, diante do público." loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+    <article class="acao" id="acao-curta">
+      <div class="acao-texto">
+        <div class="capa k-petroleo">
+          <div class="capa-topo"><span>Previsto · 2027</span></div>
+          <div class="capa-titulo">Curta Rio <span style="white-space:nowrap">Ji-Paraná</span></div>
+          <div class="capa-topo"><span>Urbano · rural · distrital</span></div>
+        </div>
+        <div class="obra-corpo">
+        <h3>Mostra Curta Rio Ji-Paraná</h3>
+        <p>Curtas feitos por gente da cidade, exibidos na área urbana, na zona rural e nos distritos, com seminários e mesas-redondas. Em vez de esperar o público chegar, a mostra vai até ele.</p>
+        <ul class="tags"><li>Mostra de cinema</li><li>Seminários</li></ul>
+        <span class="mono contador-fotos">3 fotos · <span class="so-toque">toque</span><span class="so-clique">clique</span> para ampliar</span>
+        </div>
+      </div>
+      <div class="fotos f-3" data-galeria="Mostra Curta Rio Ji-Paraná">
+        <button type="button" data-grande="img/acoes/curta-1.jpg" aria-label="Ampliar foto 1 de 3: Foliões de reis cantam e tocam sanfona e viola ao lado de um palhaço de máscara vermelha."><img src="img/acoes/curta-1-m.jpg" alt="Foliões de reis cantam e tocam sanfona e viola ao lado de um palhaço de máscara vermelha." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/curta-2.jpg" aria-label="Ampliar foto 2 de 3: Cena em preto e branco: uma criança brinca sentada no chão de terra de um quintal."><img src="img/acoes/curta-2-m.jpg" alt="Cena em preto e branco: uma criança brinca sentada no chão de terra de um quintal." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/curta-3.jpg" aria-label="Ampliar foto 3 de 3: Retrato de um homem de camiseta verde-limão diante de uma parede verde."><img src="img/acoes/curta-3-m.jpg" alt="Retrato de um homem de camiseta verde-limão diante de uma parede verde." loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+    <article class="acao" id="acao-itinerante">
+      <div class="acao-texto">
+        <div class="capa k-papel">
+          <div class="capa-topo"><span>Aprovado · parceria</span></div>
+          <div class="capa-titulo">Itine<wbr>rante</div>
+          <div class="capa-topo"><span>Fotografia e texto</span></div>
+        </div>
+        <div class="obra-corpo">
+        <h3>Exposição itinerante</h3>
+        <p>Projeto aprovado em que o coletivo entra como parceiro, cuidando da acessibilidade comunicacional, do som, do cerimonial e do acompanhamento da exposição.</p>
+        <ul class="tags"><li>Fotografia</li><li>Acessibilidade</li><li>Folia de Reis</li></ul>
+        <span class="mono contador-fotos">3 fotos · <span class="so-toque">toque</span><span class="so-clique">clique</span> para ampliar</span>
+        </div>
+      </div>
+      <div class="fotos f-3" data-galeria="Exposição itinerante">
+        <button type="button" data-grande="img/acoes/itinerante-2.jpg" aria-label="Ampliar foto 1 de 3: Foto de grupo da Companhia de Santos Reis, com bandeira, violões e sanfona."><img src="img/acoes/itinerante-2-m.jpg" alt="Foto de grupo da Companhia de Santos Reis, com bandeira, violões e sanfona." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/itinerante-1.jpg" aria-label="Ampliar foto 2 de 3: Foliões e palhaços da Companhia de Santos Reis sob um arco enfeitado com folhas de palmeira."><img src="img/acoes/itinerante-1-m.jpg" alt="Foliões e palhaços da Companhia de Santos Reis sob um arco enfeitado com folhas de palmeira." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/itinerante-3.jpg" aria-label="Ampliar foto 3 de 3: Fitas coloridas e flores da bandeira de Santos Reis em primeiro plano; ao fundo, uma mulher canta."><img src="img/acoes/itinerante-3-m.jpg" alt="Fitas coloridas e flores da bandeira de Santos Reis em primeiro plano; ao fundo, uma mulher canta." loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+    <article class="acao" id="acao-politica">
+      <div class="acao-texto">
+        <div class="capa k-vermelho">
+          <div class="capa-topo"><span>Em andamento</span></div>
+          <div class="capa-titulo">Política pública</div>
+          <div class="capa-topo"><span>Municipal · estadual · nacional</span></div>
+        </div>
+        <div class="obra-corpo">
+        <h3>Política pública</h3>
+        <p>Participação do coletivo em conferências e fóruns de cultura, nos âmbitos municipal, estadual e nacional. Participação em reuniões com administradores públicos e sociedade civil.</p>
+        <ul class="tags"><li>Conferências</li><li>Fóruns</li><li>Cultura Viva</li></ul>
+        <span class="mono contador-fotos">3 fotos · <span class="so-toque">toque</span><span class="so-clique">clique</span> para ampliar</span>
+        </div>
+      </div>
+      <div class="fotos f-3d" data-galeria="Política pública">
+        <button type="button" data-grande="img/acoes/politica-3.jpg" aria-label="Ampliar foto 1 de 3: Encontro da rede Cultura Viva: participantes posam diante de um telão com a palavra “Bem-vindos”."><img src="img/acoes/politica-3-m.jpg" alt="Encontro da rede Cultura Viva: participantes posam diante de um telão com a palavra “Bem-vindos”." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/politica-1.jpg" aria-label="Ampliar foto 2 de 3: Integrantes à mesa do 5º Fórum Municipal de Cultura."><img src="img/acoes/politica-1-m.jpg" alt="Integrantes à mesa do 5º Fórum Municipal de Cultura." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/politica-2.jpg" aria-label="Ampliar foto 3 de 3: Integrantes do coletivo seguram a bandeira da 6ª Teia Nacional dos Pontos de Cultura, em Aracruz (ES)."><img src="img/acoes/politica-2-m.jpg" alt="Integrantes do coletivo seguram a bandeira da 6ª Teia Nacional dos Pontos de Cultura, em Aracruz (ES)." loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+    <article class="acao" id="acao-participacoes">
+      <div class="acao-texto">
+        <div class="capa k-coral">
+          <div class="capa-topo"><span>Em andamento</span></div>
+          <div class="capa-titulo">Partici<wbr>pações</div>
+          <div class="capa-topo"><span>Eventos · aldeias · escolas</span></div>
+        </div>
+        <div class="obra-corpo">
+        <h3>Participações</h3>
+        <p>Participações do coletivo em eventos culturais, exposições, aldeias indígenas, feiras de empreendedorismo, escolas públicas, encontros acadêmicos e muitos outros.</p>
+        <ul class="tags"><li>Eventos</li><li>Exposições</li><li>Aldeias indígenas</li><li>Encontros acadêmicos</li></ul>
+        <span class="mono contador-fotos">3 fotos · <span class="so-toque">toque</span><span class="so-clique">clique</span> para ampliar</span>
+        </div>
+      </div>
+      <div class="fotos f-trio" data-galeria="Participações">
+        <button type="button" data-grande="img/acoes/participacoes-1.jpg" aria-label="Ampliar foto 1 de 3: Artistas de figurino colorido num evento ao ar livre, à noite, com tendas ao fundo."><img src="img/acoes/participacoes-1-m.jpg" alt="Artistas de figurino colorido num evento ao ar livre, à noite, com tendas ao fundo." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/participacoes-2.jpg" aria-label="Ampliar foto 2 de 3: Indígenas dançam com saias de palha sob uma cobertura de palha."><img src="img/acoes/participacoes-2-m.jpg" alt="Indígenas dançam com saias de palha sob uma cobertura de palha." loading="lazy" decoding="async"></button>
+        <button type="button" data-grande="img/acoes/participacoes-3.jpg" aria-label="Ampliar foto 3 de 3: Espaço da Associação Beneficente Marias de Lenço de Ji-Paraná, com a pintura de uma mulher negra de turbante."><img src="img/acoes/participacoes-3-m.jpg" alt="Espaço da Associação Beneficente Marias de Lenço de Ji-Paraná, com a pintura de uma mulher negra de turbante." loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═════════ CANAIS ═════════ -->
+<section id="canais" class="faixa-canais">
+  <div class="wrap">
+    <h2>Acompanhe<br>o coletivo</h2>
+    <ul class="canais">
+      <li>
+        <a href="https://www.youtube.com/@coletivorespirartes" target="_blank" rel="noopener">
+          <span class="mono rede">YouTube · filmes e documentários</span>
+          <span class="arroba">@coletivorespirartes</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/coletivorespirartes" target="_blank" rel="noopener">
+          <span class="mono rede">Instagram · agenda e bastidores</span>
+          <span class="arroba">@coletivorespirartes</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer class="pe">
+  <div class="wrap">
+    <div>
+      <div class="assinatura">Respir<span>artes</span></div>
+      <p class="lema-pe">Porque eu preciso respirar arte.</p>
+      <p class="mono">Ponto de Cultura · Ji-Paraná, Rondônia</p>
+    </div>
+    <div>
+      <p class="mono">Material organizado em projeto de extensão universitária<br>Análise e Desenvolvimento de Sistemas · 2026</p>
+      <p class="mono" style="margin-top:14px"><a class="subir" href="#">Voltar ao topo ↑</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var h1 = document.querySelector('.marca');
+    if (!h1) return;
+    var l1 = h1.querySelector('.l1');
+    var l2 = h1.querySelector('.l2');
+    var empilhado = window.matchMedia('(max-width: 720px)');
+
+    function ajustar() {
+      h1.classList.add('medindo');
+      h1.style.fontSize = '100px';
+      var disponivel = h1.clientWidth;
+      var natural = empilhado.matches
+        ? Math.max(l1.getBoundingClientRect().width, l2.getBoundingClientRect().width)
+        : l1.getBoundingClientRect().width + l2.getBoundingClientRect().width;
+      if (natural > 0 && disponivel > 0) {
+        h1.style.fontSize = Math.floor(100 * disponivel / natural * (empilhado.matches ? 0.985 : 0.955)) + 'px';
+      }
+      h1.classList.remove('medindo');
+    }
+
+    ajustar();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustar);
+    var t;
+    window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(ajustar, 120); });
+  })();
+</script>
+
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <div class="lb-topo">
+    <p class="mono" id="lb-titulo"></p>
+    <button type="button" class="lb-fechar" id="lb-fechar">Fechar ✕</button>
+  </div>
+  <div class="lb-palco">
+    <img id="lb-img" alt="">
+    <button type="button" class="lb-seta lb-ant" id="lb-ant" aria-label="Foto anterior">←</button>
+    <button type="button" class="lb-seta lb-prox" id="lb-prox" aria-label="Próxima foto">→</button>
+  </div>
+  <p class="lb-legenda" id="lb-legenda"></p>
+</dialog>
+
+<script>
+  (function () {
+    var lb = document.getElementById('lb');
+    if (!lb || !lb.showModal) return;
+    var img = document.getElementById('lb-img'), leg = document.getElementById('lb-legenda'), tit = document.getElementById('lb-titulo');
+    var lista = [], atual = 0, nome = '';
+    function mostrar(i) {
+      atual = (i + lista.length) % lista.length;
+      var b = lista[atual], mini = b.querySelector('img');
+      img.src = b.getAttribute('data-grande');
+      img.alt = mini.alt;
+      leg.textContent = mini.alt;
+      tit.textContent = nome + ' · ' + (atual + 1) + ' / ' + lista.length;
+      var varias = lista.length > 1;
+      document.getElementById('lb-ant').hidden = !varias;
+      document.getElementById('lb-prox').hidden = !varias;
+    }
+    document.querySelectorAll('.fotos').forEach(function (g) {
+      var botoes = Array.prototype.slice.call(g.querySelectorAll('button'));
+      botoes.forEach(function (b, i) {
+        b.addEventListener('click', function () {
+          lista = botoes; nome = g.getAttribute('data-galeria') || '';
+          mostrar(i); lb.showModal();
+        });
+      });
+    });
+    document.getElementById('lb-fechar').addEventListener('click', function () { lb.close(); });
+    document.getElementById('lb-ant').addEventListener('click', function () { mostrar(atual - 1); });
+    document.getElementById('lb-prox').addEventListener('click', function () { mostrar(atual + 1); });
+    lb.addEventListener('click', function (ev) { if (ev.target === lb || ev.target.classList.contains('lb-palco')) lb.close(); });
+    lb.addEventListener('keydown', function (ev) {
+      if (ev.key === 'ArrowLeft') mostrar(atual - 1);
+      if (ev.key === 'ArrowRight') mostrar(atual + 1);
+    });
+    var x0 = null;
+    lb.addEventListener('touchstart', function (ev) { x0 = ev.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function (ev) {
+      if (x0 === null) return;
+      var dx = ev.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) mostrar(atual + (dx < 0 ? 1 : -1));
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var raiz = document.documentElement;
+    var calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!('IntersectionObserver' in window) || calmo) return;
+    raiz.classList.add('js');
+
+    var alvos = document.querySelectorAll('.cabeca, .player, .destaque, .grade-filmes .filme, .sobre-texto p, .faixa-citacao blockquote, .numero, .trajetoria h2, .tempo li, .certificado > div, .acao-texto, .acao .fotos, .canais li');
+    alvos.forEach(function (el) {
+      var irmaos = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      el.style.setProperty('--atraso', Math.min(irmaos, 4) * 0.08 + 's');
+      el.classList.add('rv');
+    });
+
+    function contar(el) {
+      var no = el.firstChild;
+      if (!no || no.nodeType !== 3 || !/^\d+$/.test(no.nodeValue.trim())) return;
+      var fim = parseInt(no.nodeValue, 10), t0 = null, dur = 1400;
+      function passo(t) {
+        if (!t0) t0 = t;
+        var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+        no.nodeValue = String(Math.round(fim * e));
+        if (k < 1) requestAnimationFrame(passo);
+      }
+      no.nodeValue = '0';
+      requestAnimationFrame(passo);
+    }
+
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('visto');
+        if (en.target.classList.contains('numero')) contar(en.target.querySelector('.valor'));
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+    alvos.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
