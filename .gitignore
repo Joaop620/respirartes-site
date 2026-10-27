@@ -1,0 +1,31 @@
+# sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editores
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# segredos (nunca versionar)
+.env
+.env.*
+*.pem
+
+# Vercel
+.vercel/
+
+# arquivos gerados pela animação do vídeo
+video-animacao/*.wav
+video-animacao/*.mp4
+video-animacao/conf/
+video-animacao/ref/
+video-animacao/render.log
+video-animacao/codificar.log
